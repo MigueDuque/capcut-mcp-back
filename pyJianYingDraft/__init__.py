@@ -5,7 +5,7 @@ from .time_util import Timerange
 from .audio_segment import Audio_segment
 from .video_segment import Video_segment, Sticker_segment, Clip_settings
 from .effect_segment import Effect_segment, Filter_segment
-from .text_segment import Text_segment, Text_style, Text_border, Text_background
+from .text_segment import Text_segment, Text_style, Text_border, Text_background, Text_shadow
 
 from .metadata import Font_type
 from .metadata import Mask_type
@@ -72,6 +72,7 @@ __all__ = [
     "Text_style",
     "Text_border",
     "Text_background",
+    "Text_shadow",
     "Track_type",
     "Shrink_mode",
     "Extend_mode",

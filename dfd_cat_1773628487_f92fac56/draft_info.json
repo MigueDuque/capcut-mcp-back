@@ -1,0 +1,3969 @@
+{
+    "canvas_config": {
+        "width": 1080,
+        "height": 1920,
+        "ratio": "original"
+    },
+    "color_space": 0,
+    "config": {
+        "adjust_max_index": 1,
+        "attachment_info": [],
+        "combination_max_index": 1,
+        "export_range": null,
+        "extract_audio_last_index": 1,
+        "lyrics_recognition_id": "",
+        "lyrics_sync": true,
+        "lyrics_taskinfo": [],
+        "maintrack_adsorb": true,
+        "material_save_mode": 0,
+        "multi_language_current": "none",
+        "multi_language_list": [],
+        "multi_language_main": "none",
+        "multi_language_mode": "none",
+        "original_sound_last_index": 1,
+        "record_audio_last_index": 1,
+        "sticker_max_index": 1,
+        "subtitle_keywords_config": null,
+        "subtitle_recognition_id": "",
+        "subtitle_sync": true,
+        "subtitle_taskinfo": [],
+        "system_font_list": [],
+        "video_mute": false,
+        "zoom_info_params": null
+    },
+    "cover": null,
+    "create_time": 0,
+    "duration": 8820000,
+    "extra_info": null,
+    "fps": 30,
+    "free_render_index_mode_on": false,
+    "group_container": null,
+    "id": "91E08AC5-22FB-47e2-9AA0-7DC300FAEA2B",
+    "keyframe_graph_list": [],
+    "keyframes": {
+        "adjusts": [],
+        "audios": [],
+        "effects": [],
+        "filters": [],
+        "handwrites": [],
+        "stickers": [],
+        "texts": [],
+        "videos": []
+    },
+    "last_modified_platform": {
+        "app_id": 359289,
+        "app_source": "cc",
+        "app_version": "6.5.0",
+        "device_id": "c4ca4238a0b923820dcc509a6f75849b",
+        "hard_disk_id": "307563e0192a94465c0e927fbc482942",
+        "mac_address": "c3371f2d4fb02791c067ce44d8fb4ed5",
+        "os": "mac",
+        "os_version": "15.5"
+    },
+    "materials": {
+        "ai_translates": [],
+        "audio_balances": [],
+        "audio_effects": [],
+        "audio_fades": [],
+        "audio_track_indexes": [],
+        "audios": [],
+        "beats": [],
+        "canvases": [],
+        "chromas": [],
+        "color_curves": [],
+        "digital_humans": [],
+        "drafts": [],
+        "effects": [],
+        "flowers": [],
+        "green_screens": [],
+        "handwrites": [],
+        "hsl": [],
+        "images": [],
+        "log_color_wheels": [],
+        "loudnesses": [],
+        "manual_deformations": [],
+        "material_animations": [],
+        "material_colors": [],
+        "multi_language_refs": [],
+        "placeholders": [],
+        "plugin_effects": [],
+        "primary_color_wheels": [],
+        "realtime_denoises": [],
+        "shapes": [],
+        "smart_crops": [],
+        "smart_relights": [],
+        "sound_channel_mappings": [],
+        "speeds": [],
+        "stickers": [],
+        "tail_leaders": [],
+        "text_templates": [],
+        "texts": [
+            {
+                "id": "d85887e56a8b4487beba2b577e629f0d",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 3], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"más\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "d208e9f16c444c7a8dece27c5bae8d53",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 6], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"barata\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "dd4239073dac49c58aae8212a39694b2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 5], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Mazda\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "b9905ee708204c8c8b7c431f14f6371c",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"la\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "b0a29d3bde9549ffbe5d79378673e91d",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 9], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Compramos\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "ab19f49a82414fde80969d9c977f4c12",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 8], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Colombia\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "167a645e439e4039943c527c0d906e54",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 3], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"CX5\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "1d5b7bf9ef2b4e62a7abf6d54ad4b205",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"de\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "238eb141e0f7431ba247f360402c0da7",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 3], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"por\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "a19457335ced46df8b9d2a0c87e21b07",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 8], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"razones.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "15e966a3dc2d4d359f61bae241199d7a",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 9], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"construir\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "23b6d94e2a774548899b07b0fdd36ce7",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 6], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Obvias\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "108d8538f5e242ab9aa4cf039f565eb7",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"de\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "596e2f4359ae4171957db53f0f93a684",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"la\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "362da7f5662441d380cd3ccfcb50ede2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 10], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"trataremos\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "93e8be297d24445a98f9dcd454e901fd",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 1], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Y\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "fe32e8e8cce14e29afcc47deb4dc9c16",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 5], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"menos\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "6bd33e0fd4dc4e30ad14dc4b2c1a94de",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 4], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"para\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "1ac3d436aebf47289aba93032e3601a4",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"de\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "291e1325d7714c9ea0e2ba6f4d3340ef",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 8], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"llevarla\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "137eac4fa9b642c88e39c1b090cdce8c",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"10\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "6dfbf7614dd0496eb65525282456a3d7",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 2], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"en\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "f2b69c594faf4361bd9951983e054a44",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 5], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"horas\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "201e3722ea8e47b28b5909f0be6628a2",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 1], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"a\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            },
+            {
+                "id": "4b016ec3c53f46a28eab3e6894d9ad24",
+                "content": "{\"styles\": [{\"fill\": {\"alpha\": 1.0, \"content\": {\"render_type\": \"solid\", \"solid\": {\"alpha\": 1.0, \"color\": [0.9254901960784314, 0.9215686274509803, 0.9215686274509803]}}}, \"range\": [0, 9], \"size\": 15.0, \"bold\": false, \"italic\": false, \"underline\": false, \"strokes\": [{\"content\": {\"solid\": {\"alpha\": 1.0, \"color\": [0.0, 0.0, 0.0]}}, \"width\": 0.08000000000000002}], \"font\": {\"id\": \"7312373689708712449\", \"path\": \"C:/Poppins-Bold.ttf\"}}], \"text\": \"Medellín.\"}",
+                "typesetting": 0,
+                "alignment": 1,
+                "letter_spacing": 0.0,
+                "line_spacing": 0.02,
+                "line_feed": 1,
+                "line_max_width": 0.82,
+                "force_apply_line_max_width": false,
+                "check_flag": 47,
+                "type": "text",
+                "fixed_width": -1,
+                "fixed_height": -1,
+                "has_shadow": true,
+                "shadow_alpha": 0.25,
+                "shadow_angle": -70.0,
+                "shadow_color": "#000000",
+                "shadow_distance": 10.0,
+                "shadow_point": {
+                    "x": 0.3420201433256688,
+                    "y": -0.9396926207859083
+                },
+                "shadow_smoothing": 23.0
+            }
+        ],
+        "time_marks": [],
+        "transitions": [],
+        "video_effects": [],
+        "video_trackings": [],
+        "videos": [],
+        "vocal_beautifys": [],
+        "vocal_separations": [],
+        "common_mask": []
+    },
+    "mutable_config": null,
+    "name": "",
+    "new_version": "110.0.0",
+    "relationships": [],
+    "render_index_track_mode_on": false,
+    "retouch_cover": null,
+    "source": "default",
+    "static_cover_image_path": "",
+    "time_marks": null,
+    "tracks": [
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "5c3808a0c795457d9f4a602563a736ec",
+            "is_default_name": false,
+            "name": "w_4",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "621c26c5440045128c1ddbf0592ad914",
+                    "material_id": "d85887e56a8b4487beba2b577e629f0d",
+                    "target_timerange": {
+                        "start": 2300000,
+                        "duration": 680000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "93affc9f8f3a4541a5292d35643387df",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "d6be4adfcb65463b9181b34f0c2bb0e8",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "e3241bf345a74cbabc5bd917eb5dba50",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "5e29cc78629a4a50b10417c543e53f2e",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "9558a8cf7044477b9677cf41172856ce",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "b7f93448d6014da5af734cf2f4c24e99",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "c58084e5baaf4f208552dc9fbe34f292"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "0441180483d44da9aa024e2757929f6e",
+            "is_default_name": false,
+            "name": "w_5",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "4725048134614768ad3ef215c72f6c2c",
+                    "material_id": "d208e9f16c444c7a8dece27c5bae8d53",
+                    "target_timerange": {
+                        "start": 2540000,
+                        "duration": 440000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "1819a6bcdb8d4832a4a91e8a1db0d1aa",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "d5c99d20ac224a43b8af74c657d53333",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "54f60c5c220a4fbca1d4677d73d0bcaa",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "4674f94cea024377adcdac63bbf59ae4",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "45f7f05656ed4eb0828bf2abd7c7b5ca",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "fc1fd064b0644145854523015b299547",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "1de5a54c48ae43a9a11ca917e37b33da"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "15e7ec967d1c487f8133204f57321ead",
+            "is_default_name": false,
+            "name": "w_2",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "9110bc0c29564067bd4bd8328d03e7ef",
+                    "material_id": "dd4239073dac49c58aae8212a39694b2",
+                    "target_timerange": {
+                        "start": 1220000,
+                        "duration": 180000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "57e8646a8a474bbe99b33c6695d8c59a",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "f03ff2dd987e4070acfb6d59fe87db4e",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "b99a1d41c0264cdf9c5d6216bd6ccacc",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "66f28be7aa424985be033a16ec83467d",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "2774b1c1e56c468fb86683bd5dcd8a62"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "003fb5ace81540b49e7afcc3dce7c1c9",
+            "is_default_name": false,
+            "name": "w_1",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "31c074559b3e4f8caaa5ffbf685d6e99",
+                    "material_id": "b9905ee708204c8c8b7c431f14f6371c",
+                    "target_timerange": {
+                        "start": 1040000,
+                        "duration": 360000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "3017213f58b342c5940b816a6db58133",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "89723ef433b34df09650da30ef561d7a",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "eed827b12851462987d3a010f6ea7291",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "9294045d64af4a7f9cadfd304bb0b296",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "057c37c26192469bb4345cc95d2d53ec"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "6d2d7943d63d4e919ef68acf8a8fcc3f",
+            "is_default_name": false,
+            "name": "w_0",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "33f76a649cb341fdb7481de253ed98b3",
+                    "material_id": "b0a29d3bde9549ffbe5d79378673e91d",
+                    "target_timerange": {
+                        "start": 580000,
+                        "duration": 820000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "520d03c9be0c41408534ca06864e48cd",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "b27a90e255e4403691dd45a450279dab",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "bc7fb21c81b1453f90dbd6a618c440d1",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "d00f66e5edf246039fb7608cf33b3c4a",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "15872ad5f8ae498abb6ac5406b2a4c04",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "83f0a93275434f21897da1d06625db2a",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "e552e33389fe485ebcbccb0c39781c06"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "02fb12a537e048928d024f179bc7503f",
+            "is_default_name": false,
+            "name": "w_7",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "9a2c721b0c4f41028b8b24601a1d508c",
+                    "material_id": "ab19f49a82414fde80969d9c977f4c12",
+                    "target_timerange": {
+                        "start": 2980000,
+                        "duration": 960000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "2f5bf8b121e44934b800749436210e9c",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "f21d237aa64145c29e85eb8d61951815",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "14947c4607b34c1895ff467a9c3d9282",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "a617c11c8f1a45c9b78134e2da220c93",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "b5221a64340e46cabc8d5d8014ce918c",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "53fea2a5f4774424bd47da7dc49ce550",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "975fcd6c1f7f4aa6be49cfd2cf2a9998"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "3a7116313fb64522b8e832eaca8d7f19",
+            "is_default_name": false,
+            "name": "w_3",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "8ef2c25615174cd599d23b06033c179f",
+                    "material_id": "167a645e439e4039943c527c0d906e54",
+                    "target_timerange": {
+                        "start": 1400000,
+                        "duration": 1580000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "0db6bd4f0ad4480b9c7361e5b757fb2d",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7284f150a83d4bef83ffb93a8080e0b2",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "3a3289beebf240cfb8360c7cff73559e",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "8c804aafb82a4670b873a87f1b96b4e0",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "0c98d886ca084003af83fca4e30764e9",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "da47340997e34066b8694e7601c18470",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "8a860c3571db40d2ac579fb955ae0b76"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "7be7dd0888534d64a52bcbc7670819b8",
+            "is_default_name": false,
+            "name": "w_6",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "3877f784496f41e68802d6b0a492e8ee",
+                    "material_id": "1d5b7bf9ef2b4e62a7abf6d54ad4b205",
+                    "target_timerange": {
+                        "start": 2880000,
+                        "duration": 100000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "1653653b269a4f75a22a08a789ce1732",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "293fd2208ec34d04a650c35192b58a1d",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "ed8164608bcb4035bd139205fcecc19c",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7a6d1d58c2aa4ae99fc090e0073bde0e",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "85a7b7851fac45119e10befc037463bf"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "ed2d08616aac4f40870a39e5924178e7",
+            "is_default_name": false,
+            "name": "w_8",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "69653609e2ab43a7907b4751ee5fc574",
+                    "material_id": "238eb141e0f7431ba247f360402c0da7",
+                    "target_timerange": {
+                        "start": 3500000,
+                        "duration": 440000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "174351ddcdda4f0b84a270c054576087",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "97553bc9cb2f4631abb21a842b6e9e45",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "52016625311443d387101a1aed758c3f",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "a199201679e94a718051d4481f59864b",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "41408a04bf9a48c7a90e9663e035b7dc",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "ec729c7b287f4750bb48742a0e55f20e",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "6cd49a26b8df48e8a46e67a1e8a702e1"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "603f7b29d8b14aaf9d9eb50e47f6034f",
+            "is_default_name": false,
+            "name": "w_10",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "25681a0cf9e94efd97e1784a2f1fa725",
+                    "material_id": "a19457335ced46df8b9d2a0c87e21b07",
+                    "target_timerange": {
+                        "start": 3940000,
+                        "duration": 1260000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "ad99e662e32048d4992b1c66ab8a1eb0",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "3df66d98686747ff9e037d49ae0b916e",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "a9b6d50c357143b7b4aac1ab21d4c446",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "40b7ab9e31714222862026be39dd206f",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "c1fdfee0561b49e3b2979af73e3a5847",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "cf11dfeab17e4821a1eccfb3e403c3a6",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "ef3035f2b9424332a7ed5411954e0884"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "0308b263a4cf42cab21e0f386386faee",
+            "is_default_name": false,
+            "name": "w_15",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "fab34ae6c43e4a6db86fa5bf9b8c79ac",
+                    "material_id": "15e966a3dc2d4d359f61bae241199d7a",
+                    "target_timerange": {
+                        "start": 6160000,
+                        "duration": 620000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "815747450ec340369dad617da21eddee",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "54717d348baf407cad22dd7c495f7b79",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "f1cc96cddc424ce9a8d01533983a3e32",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "b3bf38c255744cf7bde9b1b4a1139c9b",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "e5427b90abf349a1b39258d9e8efd7c3",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7903f7447c45412ba583d288b8aab09d",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "fe98d71154304217b4b1fa55ad8a71a4"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "0006f430cc95427cb8bbb46c60aa23c6",
+            "is_default_name": false,
+            "name": "w_9",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "c5864e82dd7d42e29281ad0e577e7c30",
+                    "material_id": "23b6d94e2a774548899b07b0fdd36ce7",
+                    "target_timerange": {
+                        "start": 3780000,
+                        "duration": 160000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "20f2031280624738bbf161759f508cfa",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "21f371e7de9b4d7fa5a2717fe10c9562",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "d0bc8bd49123481c820d3d398c62a447",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "c92c88e5356d4839a15e5ec5c02acf3d",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "3a953ec4aa674d879da989b56a8812e9"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "5831af679927481cbc6f3032b24c11c8",
+            "is_default_name": false,
+            "name": "w_14",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "727c465efa0e4bf1ba85b27ae5f40332",
+                    "material_id": "108d8538f5e242ab9aa4cf039f565eb7",
+                    "target_timerange": {
+                        "start": 5960000,
+                        "duration": 200000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "79f1330d18244459abde521b7ac4be19",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "6b22590841384e3a8938acc96f2cbe70",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "54fab47b20f44ca1be5df32185bdcaab",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "c0c0b1c5de3d4b4f868da6331547e7da",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "0f9738c0357047bdbcc836f4a6660572"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "69475799bafd4d3295d7dab189f578a8",
+            "is_default_name": false,
+            "name": "w_12",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "1085b97abd9247b5a2b96e4f66643706",
+                    "material_id": "596e2f4359ae4171957db53f0f93a684",
+                    "target_timerange": {
+                        "start": 5570000,
+                        "duration": 590000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "0ed13888d0d649af8896190e7aa07dfe",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "16d1bd52f7e64153a308a2aadb0714d0",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "4220b2e46aac4536832d70a12eae875a",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "8d8494a52dca41629c593c9c3611ba22",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "fcd936443f014b0d84685a0b4c33d96b",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7c5d6c488a4543668a9fa2cc9d057842",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "4b5331e5ca7e403e8ed92c939f39233a"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "8c395fcedc9a4b98875e8b9da2d38449",
+            "is_default_name": false,
+            "name": "w_13",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "7701ef2630d04823af966fc77fe76a6f",
+                    "material_id": "362da7f5662441d380cd3ccfcb50ede2",
+                    "target_timerange": {
+                        "start": 5630000,
+                        "duration": 530000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "44ff74a3104f4c9caed04fcce13f1e0d",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "a549d0b40fd54dc6ba97eb662f5d7b01",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "df925493e2d944eca5e9c7589272aabc",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "19813b54fa254034ac1804a979ec4fbd",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "a929032b2fa0449d95b2f24c0c379a5c",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "1e154505b0cb43c9b22120b6fa5a38f4",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "75f668aa83d64c41b21dd6144a0df3fd"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "02cd66cc8c334a3fa4f1b20e356608a8",
+            "is_default_name": false,
+            "name": "w_11",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "9063ace5317c41cfbb15acf92c661412",
+                    "material_id": "93e8be297d24445a98f9dcd454e901fd",
+                    "target_timerange": {
+                        "start": 5460000,
+                        "duration": 700000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "6034d28656d54faaac467bf701336918",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "fd8ff06aed374ca694eea7c902632e07",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "3405400334d5449b94590bc2d746d449",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "c2dc0b6473c54ffa8e142e32a0568109",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "5636ffd50b6f4cc88dedd5cef8fdce35",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "8c38826f52d246d18bc49be83c1e4694",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "b49c3ad597944561ab1de07d224d359d"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "e452037ed4cd4e8d8e7b1e9a55845345",
+            "is_default_name": false,
+            "name": "w_17",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "8c09d763924c489fb0bbe9dfcdbeeb03",
+                    "material_id": "fe32e8e8cce14e29afcc47deb4dc9c16",
+                    "target_timerange": {
+                        "start": 6640000,
+                        "duration": 140000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "db07a31e219b42188b9ffa322bbd209b",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "d00c2942e20c460aa4ccd25496d6b212",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "c78a8947ae284264ab508a206f31e97b",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "adfdc08197fa481aaaa6b560fce01ab8",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "0156642eeb224d3e8aa729f1fa395e07"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "ed43350ade75475e93cfe798bf710374",
+            "is_default_name": false,
+            "name": "w_21",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "2400d25cc5a141e2929cc14fd64db3df",
+                    "material_id": "6bd33e0fd4dc4e30ad14dc4b2c1a94de",
+                    "target_timerange": {
+                        "start": 7700000,
+                        "duration": 380000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "fb77ae84fb9e47e3bcc2f8013f0ad96e",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "486cea7f703a4beb909494d8a63af237",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "23591e06860d4321811e3a67811ca751",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "070825b9de5f41ad821dc4e501499751",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "af4c1a8afb504a19bcb333ac4cb444c2"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "57a53fa2f1d5466ea7df0633bf9ca217",
+            "is_default_name": false,
+            "name": "w_18",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "38eec03a9e284665b37f74ae103b22ec",
+                    "material_id": "1ac3d436aebf47289aba93032e3601a4",
+                    "target_timerange": {
+                        "start": 6780000,
+                        "duration": 1300000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "20d9fd30a3dd4544a16dcfd1276b4c70",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "d5949e574f374cfb862957e92c4ae88e",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "30bd44f2c5d94c9cbde66641aa764803",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "807ba30c6ab44862885ab3e20ced311e",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "b721fe9f555545b1b8e7451e9a05785b",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "2fa95b23ceb546a3a5032283040844f4",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "ffa3180794c0421da8b9651fa6f8f662"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "173eee6899b443529c18c474fcff23da",
+            "is_default_name": false,
+            "name": "w_22",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "e56f2f853ee945d79d4de24b6b227337",
+                    "material_id": "291e1325d7714c9ea0e2ba6f4d3340ef",
+                    "target_timerange": {
+                        "start": 8080000,
+                        "duration": 740000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "1d15ade24afa49489572c7156c15c57a",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "422d7903b0694eb490443d47f30c0b0d",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "e75c3f244efd44bb8fc0f5175d549cd7",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "21da27ab3bd54e909ef3a0ab14eec069",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7590c53b14c941fcb5c81c74b3dbcf74",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "a44ba148c6d740249b95ffbd27d73edf",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "e457d939f6e54843bc10842d5308bad7"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "21d6297e2104481f8c1deb8e1ac86a95",
+            "is_default_name": false,
+            "name": "w_19",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "fa2f3a91cc56455a83d483629b03c989",
+                    "material_id": "137eac4fa9b642c88e39c1b090cdce8c",
+                    "target_timerange": {
+                        "start": 6960000,
+                        "duration": 1120000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "199f227b1ab94e0887f7b360f5af59aa",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "81aa923971d24237bc900bfc05a79c69",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "7767af3f76c2498e83c96bb675fedf90",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "48e219516a674c42a410ff1334a5c92f",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "4d973b43b9e64d94b2cc3938451f112f",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "d607a74cd7c24b1f93403292b6d359af",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "0cb7f3ef3b2a48bc90d0690273a46ba9"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "2507229a59e34750a7712b0c98442731",
+            "is_default_name": false,
+            "name": "w_16",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "0e0982688dd2481cb16b79f5808bb67f",
+                    "material_id": "6dfbf7614dd0496eb65525282456a3d7",
+                    "target_timerange": {
+                        "start": 6420000,
+                        "duration": 360000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "5e6bc6c3bcd6464ba958732ffb3d1e67",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "01ccb80de4b44649996b255c82884129",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "b5b8c072bdcd4cbfaf85ea430815203e",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "6aa2dadc43e4467db27b4dcfd0373190",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "b9a407b8dbae40b5a6f7b008c1964c59"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "1f2b02ffcabd4e5aa16e64e10ee61635",
+            "is_default_name": false,
+            "name": "w_20",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "c9aac62fc4434590b85e03673829f5e8",
+                    "material_id": "f2b69c594faf4361bd9951983e054a44",
+                    "target_timerange": {
+                        "start": 7080000,
+                        "duration": 1000000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "df0676f1b58f4d0abfe919c6d521f10d",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "20aab358f1364286b952919712638d8d",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "a245928f8a694325a268b69106a63f8b",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "182d113232fb4216a1cfcb5af18887a9",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "70a0235d403c441faaeeded78cf74160",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                },
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "43c26a85fd954d919ac048492b30304a",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "1e87c6ce69464563a8fed695c5bd96ab"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "d5f34897cc764ed58c591a1a166ddb29",
+            "is_default_name": false,
+            "name": "w_23",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "b5ea11c5e38049e8ba3ff6a4960e2658",
+                    "material_id": "201e3722ea8e47b28b5909f0be6628a2",
+                    "target_timerange": {
+                        "start": 8280000,
+                        "duration": 540000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "82cb1422162c43d1909ca3031eb4532e",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "0d21299b773c4376b1db9f87b02cf4b4",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        1.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "05df62291b1d4a598dceb1726a80677d",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "2ad9ddc27b84421d8477242c44624efc",
+                                    "time_offset": 433333,
+                                    "values": [
+                                        0.88
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "30c21449d0dd4894ac38a9a56b9fae91"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        },
+        {
+            "attribute": 0,
+            "flag": 0,
+            "id": "a97cb78368a140488b796d05ee5f9c94",
+            "is_default_name": false,
+            "name": "w_24",
+            "segments": [
+                {
+                    "enable_adjust": true,
+                    "enable_color_correct_adjust": false,
+                    "enable_color_curves": true,
+                    "enable_color_match_adjust": false,
+                    "enable_color_wheels": true,
+                    "enable_lut": true,
+                    "enable_smart_color_adjust": false,
+                    "last_nonzero_volume": 1.0,
+                    "reverse": false,
+                    "track_attribute": 0,
+                    "track_render_index": 0,
+                    "visible": true,
+                    "id": "db392841ca3c4033860d153ef4455e3a",
+                    "material_id": "4b016ec3c53f46a28eab3e6894d9ad24",
+                    "target_timerange": {
+                        "start": 8390000,
+                        "duration": 430000
+                    },
+                    "common_keyframes": [
+                        {
+                            "id": "19246acc39fb4f5b949af7752f4b6c83",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "cf16ea2e74d7439bb0c9d628be68aaf8",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.0
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypeAlpha"
+                        },
+                        {
+                            "id": "3fcd75abf0ab4708abb880aacbfb3593",
+                            "keyframe_list": [
+                                {
+                                    "curveType": "Line",
+                                    "graphID": "",
+                                    "left_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "right_control": {
+                                        "x": 0.0,
+                                        "y": 0.0
+                                    },
+                                    "id": "92e149e9c59e49f99d803fa2db16ac37",
+                                    "time_offset": 0,
+                                    "values": [
+                                        0.91
+                                    ]
+                                }
+                            ],
+                            "material_id": "",
+                            "property_type": "KFTypePositionY"
+                        }
+                    ],
+                    "keyframe_refs": [],
+                    "source_timerange": null,
+                    "speed": 1.0,
+                    "volume": 1.0,
+                    "extra_material_refs": [
+                        "a60ebd88ef1744168f37ff50ca0e6882"
+                    ],
+                    "clip": {
+                        "alpha": 1.0,
+                        "flip": {
+                            "horizontal": false,
+                            "vertical": false
+                        },
+                        "rotation": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "transform": {
+                            "x": 0,
+                            "y": 0
+                        }
+                    },
+                    "uniform_scale": {
+                        "on": true,
+                        "value": 1.0
+                    },
+                    "render_index": 15000
+                }
+            ],
+            "type": "text"
+        }
+    ],
+    "update_time": 0,
+    "version": 360000,
+    "platform": {
+        "app_id": 359289,
+        "app_source": "cc",
+        "app_version": "6.5.0",
+        "device_id": "c4ca4238a0b923820dcc509a6f75849b",
+        "hard_disk_id": "307563e0192a94465c0e927fbc482942",
+        "mac_address": "c3371f2d4fb02791c067ce44d8fb4ed5",
+        "os": "mac",
+        "os_version": "15.5"
+    }
+}

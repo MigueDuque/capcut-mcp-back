@@ -1,4 +1,4 @@
-"""剪映自动化控制，主要与自动导出有关"""
+"""JianYing automation controller, primarily for auto-export"""
 
 import time
 import shutil
@@ -7,7 +7,7 @@ import uiautomation as uia
 import re
 import os
 from logging.handlers import RotatingFileHandler
-import logging # 引入 logging 模块
+import logging  # Import logging module
 
 from enum import Enum
 from typing import Optional, Literal, Callable
@@ -15,34 +15,34 @@ from typing import Optional, Literal, Callable
 from . import exceptions
 from .exceptions import AutomationError
 
-# --- 配置日志记录器 ---
-logger = logging.getLogger('fastapi_video_generator') # 为您的fastapi应用定义一个特定的logger名称
-logger.setLevel(logging.INFO) # 设置最低记录级别
+# --- Configure logger ---
+logger = logging.getLogger('fastapi_video_generator')  # Define a specific logger name for the FastAPI app
+logger.setLevel(logging.INFO)  # Set minimum logging level
 
-# 创建一个格式化器
+# Create a formatter
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-# 创建一个控制台处理器
+# Create a console handler
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
-# 创建一个文件处理器，并设置文件轮换
-log_dir = 'logs' # 定义日志文件存放的目录
+# Create a file handler with log rotation
+log_dir = 'logs'  # Log file directory
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
-log_file_path = os.path.join(log_dir, 'fastapi_video_generator.log') # 日志文件名
+log_file_path = os.path.join(log_dir, 'fastapi_video_generator.log')  # Log file name
 
-file_handler = RotatingFileHandler(log_file_path, backupCount=5, encoding='utf-8') # 5MB per file, keep 5 backups
+file_handler = RotatingFileHandler(log_file_path, backupCount=5, encoding='utf-8')  # 5MB per file, keep 5 backups
 file_handler.setLevel(logging.INFO)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-logger.info("fastapi 应用日志系统初始化完成。")
+logger.info("FastAPI application logging system initialized.")
 
 class Export_resolution(Enum):
-    """导出分辨率"""
+    """Export resolution"""
     RES_4K = "4K"
     RES_2K = "2K"
     RES_1080P = "1080P"
@@ -50,7 +50,7 @@ class Export_resolution(Enum):
     RES_480P = "480P"
 
 class Export_framerate(Enum):
-    """导出帧率"""
+    """Export framerate"""
     FR_24 = "24fps"
     FR_25 = "25fps"
     FR_30 = "30fps"
@@ -58,11 +58,11 @@ class Export_framerate(Enum):
     FR_60 = "60fps"
 
 class ControlFinder:
-    """控件查找器，封装部分与控件查找相关的逻辑"""
+    """Control finder; encapsulates control-lookup logic"""
 
     @staticmethod
     def desc_matcher(target_desc: str, depth: int = 2, exact: bool = False) -> Callable[[uia.Control, int], bool]:
-        """根据full_description查找控件的匹配器"""
+        """Matcher that finds controls by full_description"""
         target_desc = target_desc.lower()
         def matcher(control: uia.Control, _depth: int) -> bool:
             if _depth != depth:
@@ -73,7 +73,7 @@ class ControlFinder:
 
     @staticmethod
     def class_name_matcher(class_name: str, depth: int = 1, exact: bool = False) -> Callable[[uia.Control, int], bool]:
-        """根据ClassName查找控件的匹配器"""
+        """Matcher that finds controls by ClassName"""
         class_name = class_name.lower()
         def matcher(control: uia.Control, _depth: int) -> bool:
             if _depth != depth:
@@ -83,31 +83,31 @@ class ControlFinder:
         return matcher
 
 class Jianying_controller:
-    """剪映控制器"""
+    """JianYing automation controller"""
 
     app: uia.WindowControl
-    """剪映窗口"""
+    """JianYing window handle"""
     app_status: Literal["home", "edit", "pre_export"]
     export_progress: dict = {"status": "idle", "percent": 0.0, "message": "", "start_time": 0}
-    """导出进度信息"""
+    """Export progress info"""
 
     def __init__(self):
-        """初始化剪映控制器, 此时剪映应该处于目录页"""
+        """Initialize the JianYing controller; JianYing must be on the home page at this point"""
         logger.info("Initializing Jianying_controller...")
         self.get_window()
         self.export_progress = {"status": "idle", "percent": 0.0, "message": "", "start_time": 0}
         logger.info("Jianying_controller initialized successfully.")
 
     def get_export_progress(self) -> dict:
-        """获取当前导出进度
-        
+        """Get the current export progress.
+
         Returns:
-            dict: 包含以下字段的字典
-                - status: 当前状态，可能的值有 "idle"(空闲), "exporting"(导出中), "finished"(已完成), "error"(出错)
-                - percent: 导出进度百分比，0-100的浮点数
-                - message: 进度消息
-                - start_time: 开始导出的时间戳
-                - elapsed: 已经过的时间(秒)
+            dict: A dictionary with the following fields:
+                - status: Current status; one of "idle", "exporting", "finished", "error"
+                - percent: Export progress percentage, a float in [0, 100]
+                - message: Progress message
+                - start_time: Timestamp when the export started
+                - elapsed: Time elapsed in seconds
         """
         if self.export_progress["status"] != "idle":
             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
@@ -117,25 +117,29 @@ class Jianying_controller:
                      resolution: Optional[Export_resolution] = None,
                      framerate: Optional[Export_framerate] = None,
                      timeout: float = 1200) -> None:
-        """导出指定的剪映草稿, **目前仅支持剪映6及以下版本**
+        """Export the specified JianYing draft — **currently only supports JianYing 6 and below**
 
-        **注意: 需要确认有导出草稿的权限(不使用VIP功能或已开通VIP), 否则可能陷入死循环**
+        **Note: the account must have export permission (no VIP-required features, or VIP is active),
+        otherwise the process may enter an infinite loop.**
 
         Args:
-            draft_name (`str`): 要导出的剪映草稿名称
-            output_path (`str`, optional): 导出路径, 支持指向文件夹或直接指向文件, 不指定则使用剪映默认路径.
-            resolution (`Export_resolution`, optional): 导出分辨率, 默认不改变剪映导出窗口中的设置.
-            framerate (`Export_framerate`, optional): 导出帧率, 默认不改变剪映导出窗口中的设置.
-            timeout (`float`, optional): 导出超时时间(秒), 默认为20分钟.
+            draft_name (`str`): Name of the JianYing draft to export.
+            output_path (`str`, optional): Output path; can point to a folder or a file.
+                If omitted, JianYing's default export path is used.
+            resolution (`Export_resolution`, optional): Export resolution; defaults to the current
+                setting in the JianYing export window.
+            framerate (`Export_framerate`, optional): Export framerate; defaults to the current
+                setting in the JianYing export window.
+            timeout (`float`, optional): Export timeout in seconds. Defaults to 20 minutes.
 
         Raises:
-            `DraftNotFound`: 未找到指定名称的剪映草稿
-            `AutomationError`: 剪映操作失败
+            `DraftNotFound`: No draft with the given name was found.
+            `AutomationError`: A UI automation operation failed.
         """
         logger.info(f"Starting export for draft: '{draft_name}' to '{output_path or 'default path'}' with resolution: {resolution}, framerate: {framerate}")
         self.export_progress["status"] = "exporting"
         self.export_progress["percent"] = 0.0
-        self.export_progress["message"] = "开始导出"
+        self.export_progress["message"] = "Starting export"
         self.export_progress["start_time"] = time.time()
         self.export_progress["elapsed"] = 0
 
@@ -146,11 +150,11 @@ class Jianying_controller:
 
         self.export_progress["status"] = "exporting"
         self.export_progress["percent"] = 5.0
-        self.export_progress["message"] = "正在导出"
+        self.export_progress["message"] = "Exporting"
         self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
 
         logger.info(f"Clicking draft: '{draft_name}'")
-        # 点击对应草稿
+        # Click the target draft
         draft_name_text = self.app.TextControl(
             searchDepth=2,
             Compare=ControlFinder.desc_matcher(f"HomePageDraftTitle:{draft_name}", exact=True)
@@ -160,39 +164,39 @@ class Jianying_controller:
             logger.error(error_msg)
             self.export_progress["status"] = "error"
             self.export_progress["percent"] = 100.0
-            self.export_progress["message"] = f"未找到名为{draft_name}的剪映草稿"
+            self.export_progress["message"] = f"No JianYing draft named '{draft_name}' found"
             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-            raise exceptions.DraftNotFound(f"未找到名为{draft_name}的剪映草稿")
+            raise exceptions.DraftNotFound(f"No JianYing draft named '{draft_name}' found")
         draft_btn = draft_name_text.GetParentControl()
         if draft_btn is None:
             error_msg = f"AutomationError: Could not find parent control for draft title '{draft_name}'."
             logger.error(error_msg)
             self.export_progress["status"] = "error"
             self.export_progress["percent"] = 100.0
-            self.export_progress["message"] = f"自动化操作失败，无法点击草稿'{draft_name}'"
+            self.export_progress["message"] = f"Automation failed: cannot click draft '{draft_name}'"
             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
             raise AutomationError(error_msg)
-        
+
         draft_btn.Click(simulateMove=False)
         logger.info(f"Clicked on draft: '{draft_name}'.")
 
         self.export_progress["status"] = "exporting"
         self.export_progress["percent"] = 10.0
-        self.export_progress["message"] = "正在导出"
+        self.export_progress["message"] = "Exporting"
         self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-        
+
         logger.info(f"Waiting for edit window for draft: '{draft_name}' (timeout: 180s)")
-        # 等待编辑窗口加载，最多等待180秒
+        # Wait for the edit window to load, up to 180 seconds
         wait_start_time = time.time()
         while time.time() - wait_start_time < 180:
             try:
-                self.get_window() # 尝试获取最新的窗口句柄和状态
+                self.get_window()  # Attempt to refresh the window handle and status
             except AutomationError as e:
                 logger.debug(f"Failed to get window during edit window wait: {e}. Retrying...")
                 time.sleep(1)
                 continue
-            
-            # 检查是否出现显卡运行环境提示框，如果出现则点击"暂不启用"
+
+            # Check for GPU environment prompt and dismiss it if present
             try:
                 disable_btn = self.app.TextControl(searchDepth=3, Compare=ControlFinder.desc_matcher("暂不启用"))
                 if disable_btn.Exists(0):
@@ -201,8 +205,8 @@ class Jianying_controller:
                     time.sleep(1)
             except Exception as e:
                 logger.debug(f"No '暂不启用' button found or error during click: {e}")
-            
-            # 检查是否已进入编辑窗口
+
+            # Check if the edit window is active
             time.sleep(1)
             export_btn = self.app.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("MainWindowTitleBarExportBtn"))
             if export_btn.Exists(0):
@@ -214,19 +218,19 @@ class Jianying_controller:
             logger.error(error_msg)
             self.export_progress["status"] = "error"
             self.export_progress["percent"] = 100.0
-            self.export_progress["message"] = "编辑超时（180秒）"
+            self.export_progress["message"] = "Edit window load timed out (180s)"
             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-            raise AutomationError("等待进入编辑窗口超时（180秒）")
+            raise AutomationError("Timed out waiting for edit window (180 seconds)")
         self.export_progress["status"] = "exporting"
         self.export_progress["percent"] = 15.0
-        self.export_progress["message"] = "正在导出"
+        self.export_progress["message"] = "Exporting"
         self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-        
-        # 点击导出按钮
+
+        # Click the export button
         export_btn.Click(simulateMove=False)
-        
+
         logger.info(f"Waiting for export settings window (timeout: 180s) for draft: '{draft_name}'")
-        # 等待导出窗口加载，最多等待180秒
+        # Wait for the export settings window to load, up to 180 seconds
         wait_start_time = time.time()
         while time.time() - wait_start_time < 180:
             try:
@@ -234,30 +238,30 @@ class Jianying_controller:
             except:
                 time.sleep(1)
                 continue
-            # 检查是否已进入导出窗口
+            # Check if the export settings window is active
             export_path_sib = self.app.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("ExportPath"))
             if export_path_sib.Exists(0):
-                time.sleep(1) # 额外等待确保UI稳定
+                time.sleep(1)  # Extra wait to ensure UI is stable
                 break
             time.sleep(1)
         else:
             self.export_progress["status"] = "error"
             self.export_progress["percent"] = 100.0
-            self.export_progress["message"] = "导出超时（180秒）"
+            self.export_progress["message"] = "Export settings window timed out (180s)"
             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-            raise AutomationError("等待进入导出窗口超时（180秒）")
+            raise AutomationError("Timed out waiting for export settings window (180 seconds)")
         self.export_progress["status"] = "exporting"
         self.export_progress["percent"] = 20.0
-        self.export_progress["message"] = "正在导出"
+        self.export_progress["message"] = "Exporting"
         self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-        
-        # 获取原始导出路径（带后缀名）
+
+        # Read the original export path (including file extension)
         export_path_text = export_path_sib.GetSiblingControl(lambda ctrl: True)
         assert export_path_text is not None
         export_path = export_path_text.GetPropertyValue(30159)
 
         logger.info(f"Attempting to set resolution: {resolution.value if resolution else 'unchanged'}, framerate: {framerate.value if framerate else 'unchanged'} for '{draft_name}'")
-        # 设置分辨率
+        # Set resolution
         if resolution is not None:
             retry_count = 0
             max_retries = 3
@@ -266,27 +270,27 @@ class Jianying_controller:
                     setting_group = self.app.GroupControl(searchDepth=1,
                                                       Compare=ControlFinder.class_name_matcher("PanelSettingsGroup_QMLTYPE"))
                     if not setting_group.Exists(0):
-                        raise AutomationError("未找到导出设置组")
+                        raise AutomationError("Export settings group not found")
                     resolution_btn = setting_group.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("ExportSharpnessInput"))
                     if not resolution_btn.Exists(0.5):
-                        raise AutomationError("未找到导出分辨率下拉框")
+                        raise AutomationError("Export resolution dropdown not found")
                     resolution_btn.Click(simulateMove=False)
                     time.sleep(0.5)
                     resolution_item = self.app.TextControl(
                         searchDepth=2, Compare=ControlFinder.desc_matcher(resolution.value)
                     )
                     if not resolution_item.Exists(0.5):
-                        raise AutomationError(f"未找到{resolution.value}分辨率选项")
+                        raise AutomationError(f"Resolution option '{resolution.value}' not found")
                     resolution_item.Click(simulateMove=False)
                     time.sleep(0.5)
-                    break  # 设置成功，跳出循环
+                    break  # Success, exit retry loop
                 except AutomationError as e:
                     retry_count += 1
                     if retry_count >= max_retries:
-                        raise  # 重试次数用完，抛出异常
-                    time.sleep(1)  # 延迟1秒后重试
+                        raise  # Retries exhausted, re-raise
+                    time.sleep(1)  # Wait 1 second before retrying
 
-        # 设置帧率
+        # Set framerate
         if framerate is not None:
             retry_count = 0
             max_retries = 3
@@ -295,134 +299,133 @@ class Jianying_controller:
                     setting_group = self.app.GroupControl(searchDepth=1,
                                                       Compare=ControlFinder.class_name_matcher("PanelSettingsGroup_QMLTYPE"))
                     if not setting_group.Exists(0):
-                        raise AutomationError("未找到导出设置组")
+                        raise AutomationError("Export settings group not found")
                     framerate_btn = setting_group.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("FrameRateInput"))
                     if not framerate_btn.Exists(0.5):
-                        raise AutomationError("未找到导出帧率下拉框")
+                        raise AutomationError("Export framerate dropdown not found")
                     framerate_btn.Click(simulateMove=False)
                     time.sleep(0.5)
                     framerate_item = self.app.TextControl(
                         searchDepth=2, Compare=ControlFinder.desc_matcher(framerate.value)
                     )
                     if not framerate_item.Exists(0.5):
-                        raise AutomationError(f"未找到{framerate.value}帧率选项")
+                        raise AutomationError(f"Framerate option '{framerate.value}' not found")
                     framerate_item.Click(simulateMove=False)
                     time.sleep(0.5)
-                    break  # 设置成功，跳出循环
+                    break  # Success, exit retry loop
                 except AutomationError as e:
                     retry_count += 1
                     if retry_count >= max_retries:
-                        raise  # 重试次数用完，抛出异常
-                    time.sleep(1)  # 延迟1秒后重试
+                        raise  # Retries exhausted, re-raise
+                    time.sleep(1)  # Wait 1 second before retrying
 
         logger.info(f"Clicking final export button for draft: '{draft_name}'")
-        # 点击导出
+        # Click the export confirm button
         export_btn = self.app.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("ExportOkBtn", exact=True))
         if not export_btn.Exists(0):
-            raise AutomationError("未在导出窗口中找到导出按钮")
+            raise AutomationError("Export button not found in export window")
         export_btn.Click(simulateMove=False)
         time.sleep(5)
 
-        # 等待导出完成
+        # Wait for export to complete
         st = time.time()
         while True:
             # self.get_window()
             if self.app_status != "pre_export": continue
 
-            # 查找导出成功按钮
+            # Look for the export success close button
             succeed_close_btn = self.app.TextControl(searchDepth=2, Compare=ControlFinder.desc_matcher("ExportSucceedCloseBtn"))
             if succeed_close_btn.Exists(0):
                 self.export_progress["status"] = "finished"
                 self.export_progress["percent"] = 100
-                self.export_progress["message"] = "导出完成"
+                self.export_progress["message"] = "Export complete"
                 self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
                 succeed_close_btn.Click(simulateMove=False)
                 break
 
-            # 查找并更新进度百分比
+            # Scan text controls for progress percentage
             try:
-                # 尝试查找所有文本控件，寻找包含百分比的文本
                 text_controls = self.app.GetChildren()
                 for control in text_controls:
                     progress_text = ""
-                    # 检查控件名称
+                    # Check control name
                     if hasattr(control, "Name") and control.Name and "%" in control.Name:
                         progress_text = control.Name
-                    # 检查控件描述
+                    # Check control description
                     elif hasattr(control, "GetPropertyValue"):
                         desc = control.GetPropertyValue(30159) if hasattr(control, "GetPropertyValue") else ""
                         if desc and isinstance(desc, str) and "%" in desc:
                             progress_text = desc
-                    
+
                     if progress_text:
-                        # 提取百分比数字，支持小数点
+                        # Extract percentage (supports decimals)
                         percent_match = re.search(r'(\d+\.?\d*)%', progress_text)
                         print("progress_text is " + progress_text)
                         print("percent_match is ", percent_match)
                         if percent_match:
-                            percent = float(percent_match.group(1))  # 使用float而不是int
+                            percent = float(percent_match.group(1))
                             print("percent is ", percent)
                             self.export_progress["percent"] = percent * 0.8 + 20
-                            self.export_progress["message"] = "正在导出"
+                            self.export_progress["message"] = "Exporting"
                             self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
                         break
             except Exception as e:
-                self.export_progress["message"] = f"获取进度时出错: {e}"
+                self.export_progress["message"] = f"Error reading progress: {e}"
                 self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
 
             if time.time() - st > timeout:
                 self.export_progress["status"] = "error"
-                self.export_progress["message"] = f"导出超时{timeout}秒"
+                self.export_progress["message"] = f"Export timed out after {timeout} seconds"
                 self.export_progress["elapsed"] = time.time() - self.export_progress["start_time"]
-                raise AutomationError("导出超时, 时限为%d秒" % timeout)
+                raise AutomationError("Export timed out after %d seconds" % timeout)
 
             time.sleep(1)
         time.sleep(2)
 
-        # 复制导出的文件到指定目录
+        # Move exported file to target path
         if output_path is not None:
             shutil.move(export_path, output_path)
 
-        logger.info(f"导出 {draft_name} 至 {output_path} 完成")
+        logger.info(f"Export of '{draft_name}' to '{output_path}' completed")
 
-        # 回到目录页
+        # Return to home page
         logger.info("back to home page")
         try:
             self.get_window()
             self.switch_to_home()
         except Exception as e:
-            logger.warning(f"back to home 失败: {str(e)}, 杀进程重启")
+            logger.warning(f"Failed to return to home page: {str(e)}; killing process and restarting")
             ProcessController.kill_jianying()
 
             if not ProcessController.restart_jianying():
                 logger.critical("Failed to restart JianYing application. Aborting.")
-                raise Exception("无法重启剪映程序")
-            
-            time.sleep(2)  # 等待进程启动
+                raise Exception("Failed to restart JianYing application")
+
+            time.sleep(2)  # Wait for process to start
             ProcessController.kill_jianying_detector()
 
 
     def switch_to_home(self) -> None:
-        """切换到剪映主页"""
+        """Switch to the JianYing home page"""
         if self.app_status == "home":
             return
         if self.app_status != "edit":
-            raise AutomationError("仅支持从编辑模式切换到主页")
+            raise AutomationError("Can only switch to home from edit mode")
         close_btn = self.app.GroupControl(searchDepth=1, ClassName="TitleBarButton", foundIndex=3)
         close_btn.Click(simulateMove=False)
         time.sleep(2)
         self.get_window()
 
     def get_window(self) -> None:
-        """寻找剪映窗口并置顶"""
+        """Find the JianYing window and bring it to the foreground"""
         if hasattr(self, "app") and self.app.Exists(0):
             self.app.SetTopmost(False)
 
         self.app = uia.WindowControl(searchDepth=1, Compare=self.__jianying_window_cmp)
         if not self.app.Exists(0):
-            raise AutomationError("剪映窗口未找到")
+            raise AutomationError("JianYing window not found")
 
-        # 寻找可能存在的导出窗口
+        # Look for a floating export window
         export_window = self.app.WindowControl(searchDepth=1, Name="导出")
         if export_window.Exists(0):
             self.app = export_window

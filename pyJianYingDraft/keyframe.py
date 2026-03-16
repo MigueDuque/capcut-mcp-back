@@ -3,18 +3,19 @@ import uuid
 from enum import Enum
 from typing import Dict, List, Any
 
+
 class Keyframe:
-    """一个关键帧（关键点）, 目前只支持线性插值"""
+    """A single keyframe (control point), currently supports linear interpolation only"""
 
     kf_id: str
-    """关键帧全局id, 自动生成"""
+    """Globally unique keyframe id, auto-generated"""
     time_offset: int
-    """相对于素材起始点的时间偏移量"""
+    """Time offset relative to the segment start, in microseconds"""
     values: List[float]
-    """关键帧的值, 似乎一般只有一个元素"""
+    """Keyframe value(s) — typically a single-element list"""
 
     def __init__(self, time_offset: int, value: float):
-        """给定时间偏移量及关键值, 初始化关键帧"""
+        """Initialize a keyframe with a given time offset and value"""
         self.kf_id = uuid.uuid4().hex
 
         self.time_offset = time_offset
@@ -22,65 +23,67 @@ class Keyframe:
 
     def export_json(self) -> Dict[str, Any]:
         return {
-            # 默认值
+            # Defaults
             "curveType": "Line",
             "graphID": "",
             "left_control": {"x": 0.0, "y": 0.0},
             "right_control": {"x": 0.0, "y": 0.0},
-            # 自定义属性
+            # Custom fields
             "id": self.kf_id,
             "time_offset": self.time_offset,
             "values": self.values
         }
 
+
 class Keyframe_property(Enum):
-    """关键帧所控制的属性类型"""
+    """The property type controlled by a keyframe"""
 
     position_x = "KFTypePositionX"
-    """右移为正, 此处的数值应该为`剪映中显示的值` / `草稿宽度`, 也即单位是半个画布宽"""
+    """Positive = move right; value = CapCut display value / draft width (half-canvas-width units)"""
     position_y = "KFTypePositionY"
-    """上移为正, 此处的数值应该为`剪映中显示的值` / `草稿高度`, 也即单位是半个画布高"""
+    """Positive = move up; value = CapCut display value / draft height (half-canvas-height units)"""
     rotation = "KFTypeRotation"
-    """顺时针旋转的**角度**"""
+    """Clockwise rotation in **degrees**"""
 
     scale_x = "KFTypeScaleX"
-    """单独控制X轴缩放比例(1.0为不缩放), 与`uniform_scale`互斥"""
+    """X-axis scale (1.0 = no scale); mutually exclusive with uniform_scale"""
     scale_y = "KFTypeScaleY"
-    """单独控制Y轴缩放比例(1.0为不缩放), 与`uniform_scale`互斥"""
+    """Y-axis scale (1.0 = no scale); mutually exclusive with uniform_scale"""
     uniform_scale = "UNIFORM_SCALE"
-    """同时控制X轴及Y轴缩放比例(1.0为不缩放), 与`scale_x`和`scale_y`互斥"""
+    """Uniform XY scale (1.0 = no scale); mutually exclusive with scale_x and scale_y"""
 
     alpha = "KFTypeAlpha"
-    """不透明度, 1.0为完全不透明, 仅对`Video_segment`有效"""
+    """Opacity (1.0 = fully opaque); only valid on Video_segment"""
     saturation = "KFTypeSaturation"
-    """饱和度, 0.0为原始饱和度, 范围为-1.0到1.0, 仅对`Video_segment`有效"""
+    """Saturation offset (0.0 = original, range -1.0 to 1.0); only valid on Video_segment"""
     contrast = "KFTypeContrast"
-    """对比度, 0.0为原始对比度, 范围为-1.0到1.0, 仅对`Video_segment`有效"""
+    """Contrast offset (0.0 = original, range -1.0 to 1.0); only valid on Video_segment"""
     brightness = "KFTypeBrightness"
-    """亮度, 0.0为原始亮度, 范围为-1.0到1.0, 仅对`Video_segment`有效"""
+    """Brightness offset (0.0 = original, range -1.0 to 1.0); only valid on Video_segment"""
 
     volume = "KFTypeVolume"
-    """音量, 1.0为原始音量, 仅对`Audio_segment`和`Video_segment`有效"""
+    """Volume (1.0 = original); valid on Audio_segment and Video_segment"""
+
 
 class Keyframe_list:
-    """关键帧列表, 记录与某个特定属性相关的一系列关键帧"""
+    """A list of keyframes controlling a single property"""
 
     list_id: str
-    """关键帧列表全局id, 自动生成"""
+    """Globally unique list id, auto-generated"""
     keyframe_property: Keyframe_property
-    """关键帧对应的属性"""
+    """The property this list controls"""
     keyframes: List[Keyframe]
-    """关键帧列表"""
+    """The keyframes in this list"""
 
     def __init__(self, keyframe_property: Keyframe_property):
-        """为给定的关键帧属性初始化关键帧列表"""
+        """Initialize a keyframe list for the given property"""
         self.list_id = uuid.uuid4().hex
 
         self.keyframe_property = keyframe_property
         self.keyframes = []
 
     def add_keyframe(self, time_offset: int, value: float):
-        """给定时间偏移量及关键值, 向此关键帧列表中添加一个关键帧"""
+        """Add a keyframe at the given time offset with the given value"""
         keyframe = Keyframe(time_offset, value)
         self.keyframes.append(keyframe)
         self.keyframes.sort(key=lambda x: x.time_offset)

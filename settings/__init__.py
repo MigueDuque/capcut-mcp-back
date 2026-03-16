@@ -1,8 +1,8 @@
 """
-配置包入口，导出所有配置
+Settings package entry point — exports all configuration values.
 """
 
-# 从local模块导入所有配置，local模块已经导入了env和base模块的配置
+# Re-export all config from local module (which already imports from env and base modules)
 from .local import *
 
 __all__ = [
@@ -13,17 +13,17 @@ __all__ = [
     "LICENSE_CONFIG"
 ]
 
-# 提供一个获取平台信息的辅助函数
+
 def get_platform_info():
     """
-    获取平台信息，用于script_file.py中的dumps方法，cap_cut需要返回platform信息
-    
+    Return platform metadata used by Script_file.dumps() for CapCut drafts.
+
     Returns:
-        dict: 平台信息字典
+        dict: Platform info dict, or None when running in JianYing mode.
     """
     if not IS_CAPCUT_ENV:
         return None
-        
+
     return {
         "app_id": 359289,
         "app_source": "cc",

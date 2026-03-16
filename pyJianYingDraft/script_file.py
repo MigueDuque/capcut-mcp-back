@@ -22,36 +22,36 @@ from settings.local import IS_CAPCUT_ENV
 from .metadata import Video_scene_effect_type, Video_character_effect_type, Filter_type
 
 class Script_material:
-    """草稿文件中的素材信息部分"""
+    """Materials section of a draft file"""
 
     audios: List[Audio_material]
-    """音频素材列表"""
+    """Audio material list"""
     videos: List[Video_material]
-    """视频素材列表"""
+    """Video material list"""
     stickers: List[Dict[str, Any]]
-    """贴纸素材列表"""
+    """Sticker material list"""
     texts: List[Dict[str, Any]]
-    """文本素材列表"""
+    """Text material list"""
 
     audio_effects: List[Audio_effect]
-    """音频特效列表"""
+    """Audio effect list"""
     audio_fades: List[Audio_fade]
-    """音频淡入淡出效果列表"""
+    """Audio fade-in/fade-out effect list"""
     animations: List[Segment_animations]
-    """动画素材列表"""
+    """Animation material list"""
     video_effects: List[Video_effect]
-    """视频特效列表"""
+    """Video effect list"""
 
     speeds: List[Speed]
-    """变速列表"""
+    """Speed change list"""
     masks: List[Dict[str, Any]]
-    """蒙版列表"""
+    """Mask list"""
     transitions: List[Transition]
-    """转场效果列表"""
+    """Transition effect list"""
     filters: List[Union[Filter, TextBubble]]
-    """滤镜/文本花字/文本气泡列表, 导出到`effects`中"""
+    """Filter / text-effect / text-bubble list, exported under 'effects'"""
     canvases: List[BackgroundFilling]
-    """背景填充列表"""
+    """Background filling list"""
 
     def __init__(self):
         self.audios = []
@@ -145,50 +145,50 @@ class Script_material:
             "vocal_separations": []
         }
 
-        # 根据IS_CAPCUT_ENV决定使用common_mask还是masks
+        # Use common_mask (CapCut) or masks (JianYing) depending on IS_CAPCUT_ENV
         if IS_CAPCUT_ENV:
             result["common_mask"] = self.masks
         else:
             result["masks"] = self.masks
-            
+
         return result
 
 class Script_file:
-    """剪映草稿文件, 大部分接口定义在此"""
+    """CapCut/JianYing draft file; most public APIs are defined here"""
 
     save_path: Optional[str]
-    """草稿文件保存路径, 仅在模板模式下有效"""
+    """Draft file save path; only valid in template mode"""
     content: Dict[str, Any]
-    """草稿文件内容"""
+    """Draft file content"""
 
     width: int
-    """视频的宽度, 单位为像素"""
+    """Video width in pixels"""
     height: int
-    """视频的高度, 单位为像素"""
+    """Video height in pixels"""
     fps: int
-    """视频的帧率"""
+    """Video frame rate"""
     duration: int
-    """视频的总时长, 单位为微秒"""
+    """Total video duration in microseconds"""
 
     materials: Script_material
-    """草稿文件中的素材信息部分"""
+    """Materials section of the draft file"""
     tracks: Dict[str, Track]
-    """轨道信息"""
+    """Track information"""
 
     imported_materials: Dict[str, List[Dict[str, Any]]]
-    """导入的素材信息"""
+    """Imported material information"""
     imported_tracks: List[Track]
-    """导入的轨道信息"""
+    """Imported track information"""
 
     TEMPLATE_FILE = "draft_content_template.json"
 
     def __init__(self, width: int, height: int, fps: int = 30):
-        """创建一个剪映草稿
+        """Create a new CapCut/JianYing draft
 
         Args:
-            width (int): 视频宽度, 单位为像素
-            height (int): 视频高度, 单位为像素
-            fps (int, optional): 视频帧率. 默认为30.
+            width (int): Video width in pixels
+            height (int): Video height in pixels
+            fps (int, optional): Video frame rate. Defaults to 30.
         """
         self.save_path = None
 
@@ -208,18 +208,18 @@ class Script_file:
 
     @staticmethod
     def load_template(json_path: str) -> "Script_file":
-        """从JSON文件加载草稿模板
+        """Load a draft template from a JSON file
 
         Args:
-            json_path (str): JSON文件路径
+            json_path (str): Path to the JSON file
 
         Raises:
-            `FileNotFoundError`: JSON文件不存在
+            `FileNotFoundError`: The JSON file does not exist
         """
         obj = Script_file(**util.provide_ctor_defaults(Script_file))
         obj.save_path = json_path
         if not os.path.exists(json_path):
-            raise FileNotFoundError("JSON文件 '%s' 不存在" % json_path)
+            raise FileNotFoundError("JSON file '%s' does not exist" % json_path)
         with open(json_path, "r", encoding="utf-8") as f:
             obj.content = json.load(f)
 
@@ -232,44 +232,46 @@ class Script_file:
         return obj
 
     def add_material(self, material: Union[Video_material, Audio_material]) -> "Script_file":
-        """向草稿文件中添加一个素材"""
-        if material in self.materials:  # 素材已存在
+        """Add a material to the draft"""
+        if material in self.materials:  # material already exists
             return self
         if isinstance(material, Video_material):
             self.materials.videos.append(material)
         elif isinstance(material, Audio_material):
             self.materials.audios.append(material)
         else:
-            raise TypeError("错误的素材类型: '%s'" % type(material))
+            raise TypeError("Unsupported material type: '%s'" % type(material))
         return self
 
     def add_track(self, track_type: Track_type, track_name: Optional[str] = None, *,
                   mute: bool = False,
                   relative_index: int = 0, absolute_index: Optional[int] = None) -> "Script_file":
-        """向草稿文件中添加一个指定类型、指定名称的轨道, 可以自定义轨道层级
+        """Add a track of the specified type and name to the draft, with optional layer ordering
 
-        注意: 主视频轨道(最底层的视频轨道)上的视频片段必须从0s开始, 否则会被剪映强制对齐至0s.
+        Note: video segments on the primary video track (the bottom-most video track) must start at 0s,
+        otherwise CapCut/JianYing will force-align them to 0s.
 
-        为避免混淆, 仅在创建第一个同类型轨道时允许不指定名称
+        To avoid ambiguity, omitting the name is only allowed when creating the first track of a given type.
 
         Args:
-            track_type (Track_type): 轨道类型
-            track_name (str, optional): 轨道名称. 仅在创建第一个同类型轨道时允许不指定.
-            mute (bool, optional): 轨道是否静音. 默认不静音.
-            relative_index (int, optional): 相对(同类型轨道的)图层位置, 越高越接近前景. 默认为0.
-            absolute_index (int, optional): 绝对图层位置, 越高越接近前景. 此参数将直接覆盖相应片段的`render_index`属性, 供有经验的用户使用.
-                此参数不能与`relative_index`同时使用.
+            track_type (Track_type): Track type
+            track_name (str, optional): Track name. May be omitted only when creating the first track of this type.
+            mute (bool, optional): Whether the track is muted. Defaults to False.
+            relative_index (int, optional): Layer position relative to tracks of the same type; higher values are closer to the foreground. Defaults to 0.
+            absolute_index (int, optional): Absolute layer position; higher values are closer to the foreground.
+                This parameter directly overrides the `render_index` of the corresponding segments and is intended for advanced users.
+                Cannot be used together with `relative_index`.
 
         Raises:
-            `NameError`: 已存在同类型轨道且未指定名称, 或已存在同名轨道
+            `NameError`: A track of this type already exists and no name was specified, or a track with the given name already exists
         """
 
         if track_name is None:
             if track_type in [track.track_type for track in self.tracks.values()]:
-                raise NameError("'%s' 类型的轨道已存在, 请为新轨道指定名称以避免混淆" % track_type)
+                raise NameError("A track of type '%s' already exists; specify a name for the new track to avoid ambiguity" % track_type)
             track_name = track_type.name
         if track_name in [track.name for track in self.tracks.values()]:
-            print("名为 '%s' 的轨道已存在" % track_name)
+            print("A track named '%s' already exists" % track_name)
             return self
 
         render_index = track_type.value.render_index + relative_index
@@ -280,100 +282,100 @@ class Script_file:
         return self
 
     def get_track(self, segment_type: Type[Base_segment], track_name: Optional[str]) -> Track:
-        # 指定轨道名称
+        # Track name specified
         if track_name is not None:
             if track_name not in self.tracks:
-                raise NameError("不存在名为 '%s' 的轨道" % track_name)
+                raise NameError("No track named '%s' exists" % track_name)
             return self.tracks[track_name]
-        # 寻找唯一的同类型的轨道
+        # Find the unique track of the matching type
         count = sum([1 for track in self.tracks.values() if track.track_type == segment_type])
-        if count == 0: raise exceptions.TrackNotFound(f"不存在接受 '{segment_type}' 的轨道")
-        if count > 1: raise NameError(f"存在多个接受 '{segment_type}' 的轨道, 请指定轨道名称")
+        if count == 0: raise exceptions.TrackNotFound(f"No track accepting '{segment_type}' was found")
+        if count > 1: raise NameError(f"Multiple tracks accepting '{segment_type}' found; specify a track name")
 
         return next(track for track in self.tracks.values() if track.accept_segment_type == segment_type)
 
     def _get_track_and_imported_track(self, segment_type: Type[Base_segment], track_name: Optional[str]) -> List[Track]:
-        """获取指定类型的所有轨道（包括普通轨道和导入的轨道）
-        
+        """Get all tracks of the specified type (including both regular and imported tracks)
+
         Args:
-            segment_type (Type[Base_segment]): 片段类型
-            track_name (Optional[str]): 轨道名称，如果指定则只返回该名称的轨道
-            
+            segment_type (Type[Base_segment]): Segment type
+            track_name (Optional[str]): Track name; if specified, only that track is returned
+
         Returns:
-            List[Track]: 符合条件的轨道列表
-            
+            List[Track]: List of tracks matching the criteria
+
         Raises:
-            NameError: 指定了轨道名称但未找到对应轨道
+            NameError: A track name was specified but no matching track was found
         """
         result_tracks = []
-        
-        # 如果指定了轨道名称
+
+        # If a track name was specified
         if track_name is not None:
-            # 在普通轨道中查找
+            # Search in regular tracks
             if track_name in self.tracks:
                 result_tracks.append(self.tracks[track_name])
-            # 在导入的轨道中查找
+            # Search in imported tracks
             for track in self.imported_tracks:
                 if track.name == track_name:
                     result_tracks.append(track)
             if not result_tracks:
-                raise NameError("不存在名为 '%s' 的轨道" % track_name)
+                raise NameError("No track named '%s' exists" % track_name)
         else:
-            # 在普通轨道中查找接受该类型片段的轨道
+            # Search regular tracks for those accepting this segment type
             for track in self.tracks.values():
                 if track.accept_segment_type == segment_type:
                     result_tracks.append(track)
-            # 在导入的轨道中查找接受该类型片段的轨道
+            # Search imported tracks for those accepting this segment type
             for track in self.imported_tracks:
                 if track.accept_segment_type == segment_type:
                     result_tracks.append(track)
             if not result_tracks:
-                raise NameError("不存在接受 '%s' 的轨道" % segment_type)
+                raise NameError("No track accepting '%s' was found" % segment_type)
             if len(result_tracks) > 1:
-                raise NameError("存在多个接受 '%s' 的轨道, 请指定轨道名称" % segment_type)
-        
+                raise NameError("Multiple tracks accepting '%s' found; specify a track name" % segment_type)
+
         return result_tracks
 
     def add_segment(self, segment: Union[Video_segment, Sticker_segment, Audio_segment, Text_segment],
                     track_name: Optional[str] = None) -> "Script_file":
-        """向指定轨道中添加一个片段
+        """Add a segment to the specified track
 
         Args:
-            segment (`Video_segment`, `Sticker_segment`, `Audio_segment`, or `Text_segment`): 要添加的片段
-            track_name (`str`, optional): 添加到的轨道名称. 当此类型的轨道仅有一条时可省略.
+            segment (`Video_segment`, `Sticker_segment`, `Audio_segment`, or `Text_segment`): The segment to add
+            track_name (`str`, optional): Name of the target track. May be omitted when there is only one track of this type.
 
         Raises:
-            `NameError`: 未找到指定名称的轨道, 或必须提供`track_name`参数时未提供
-            `TypeError`: 片段类型不匹配轨道类型
-            `SegmentOverlap`: 新片段与已有片段重叠
+            `NameError`: The specified track was not found, or `track_name` is required but was not provided
+            `TypeError`: The segment type does not match the track type
+            `SegmentOverlap`: The new segment overlaps an existing segment
         """
         tracks = self._get_track_and_imported_track(type(segment), track_name)
-        target = tracks[0] 
+        target = tracks[0]
 
-        # 加入轨道并更新时长
+        # Add to track and update duration
         target.add_segment(segment)
         self.duration = max(self.duration, segment.end)
 
-        # 自动添加相关素材
+        # Automatically add related materials
         if isinstance(segment, Video_segment):
-            # 出入场等动画
+            # Entry/exit animations and similar
             if (segment.animations_instance is not None) and (segment.animations_instance not in self.materials):
                 self.materials.animations.append(segment.animations_instance)
-            # 特效
+            # Effects
             for effect in segment.effects:
                 if effect not in self.materials:
                     self.materials.video_effects.append(effect)
-            # 滤镜
+            # Filters
             for filter_ in segment.filters:
                 if filter_ not in self.materials:
                     self.materials.filters.append(filter_)
-            # 蒙版
+            # Mask
             if segment.mask is not None:
                 self.materials.masks.append(segment.mask.export_json())
-            # 转场
+            # Transition
             if (segment.transition is not None) and (segment.transition not in self.materials):
                 self.materials.transitions.append(segment.transition)
-            # 背景填充
+            # Background filling
             if segment.background_filling is not None:
                 self.materials.canvases.append(segment.background_filling)
 
@@ -381,28 +383,28 @@ class Script_file:
         elif isinstance(segment, Sticker_segment):
             self.materials.stickers.append(segment.export_material())
         elif isinstance(segment, Audio_segment):
-            # 淡入淡出
+            # Fade in/out
             if (segment.fade is not None) and (segment.fade not in self.materials):
                 self.materials.audio_fades.append(segment.fade)
-            # 特效
+            # Effects
             for effect in segment.effects:
                 if effect not in self.materials:
                     self.materials.audio_effects.append(effect)
             self.materials.speeds.append(segment.speed)
         elif isinstance(segment, Text_segment):
-            # 出入场等动画
+            # Entry/exit animations and similar
             if (segment.animations_instance is not None) and (segment.animations_instance not in self.materials):
                 self.materials.animations.append(segment.animations_instance)
-            # 气泡效果
+            # Bubble effect
             if segment.bubble is not None:
                 self.materials.filters.append(segment.bubble)
-            # 花字效果
+            # Stylized-font text effect
             if segment.effect is not None:
                 self.materials.filters.append(segment.effect)
-            # 字体样式
+            # Font style
             self.materials.texts.append(segment.export_material())
 
-        # 添加片段素材
+        # Add segment material
         if isinstance(segment, (Video_segment, Audio_segment)):
             self.add_material(segment.material_instance)
 
@@ -411,55 +413,56 @@ class Script_file:
     def add_effect(self, effect: Union[Video_scene_effect_type, Video_character_effect_type],
                    t_range: Timerange, track_name: Optional[str] = None, *,
                    params: Optional[List[Optional[float]]] = None) -> "Script_file":
-        """向指定的特效轨道中添加一个特效片段
+        """Add an effect segment to the specified effect track
 
         Args:
-            effect (`Video_scene_effect_type` or `Video_character_effect_type`): 特效类型
-            t_range (`Timerange`): 特效片段的时间范围
-            track_name (`str`, optional): 添加到的轨道名称. 当特效轨道仅有一条时可省略.
-            params (`List[Optional[float]]`, optional): 特效参数列表, 参数列表中未提供或为None的项使用默认值.
-                参数取值范围(0~100)与剪映中一致. 某个特效类型有何参数以及具体参数顺序以枚举类成员的annotation为准.
+            effect (`Video_scene_effect_type` or `Video_character_effect_type`): Effect type
+            t_range (`Timerange`): Time range of the effect segment
+            track_name (`str`, optional): Name of the target track. May be omitted when there is only one effect track.
+            params (`List[Optional[float]]`, optional): Effect parameter list; items that are missing or None use the default value.
+                The value range (0–100) matches what is shown in CapCut/JianYing. Refer to the enum member annotations
+                for the parameters available for a given effect type and their order.
 
         Raises:
-            `NameError`: 未找到指定名称的轨道, 或必须提供`track_name`参数时未提供
-            `TypeError`: 指定的轨道不是特效轨道
-            `ValueError`: 新片段与已有片段重叠、提供的参数数量超过了该特效类型的参数数量, 或参数值超出范围.
+            `NameError`: The specified track was not found, or `track_name` is required but was not provided
+            `TypeError`: The specified track is not an effect track
+            `ValueError`: The new segment overlaps an existing segment, too many parameters were provided, or a parameter value is out of range.
         """
         target = self.get_track(Effect_segment, track_name)
 
-        # 加入轨道并更新时长
+        # Add to track and update duration
         segment = Effect_segment(effect, t_range, params)
         target.add_segment(segment)
         self.duration = max(self.duration, t_range.start + t_range.duration)
 
-        # 自动添加相关素材
+        # Automatically add related materials
         if segment.effect_inst not in self.materials:
             self.materials.video_effects.append(segment.effect_inst)
         return self
 
     def add_filter(self, filter_meta: Filter_type, t_range: Timerange,
                    track_name: Optional[str] = None, intensity: float = 100.0) -> "Script_file":
-        """向指定的滤镜轨道中添加一个滤镜片段
+        """Add a filter segment to the specified filter track
 
         Args:
-            filter_meta (`Filter_type`): 滤镜类型
-            t_range (`Timerange`): 滤镜片段的时间范围
-            track_name (`str`, optional): 添加到的轨道名称. 当滤镜轨道仅有一条时可省略.
-            intensity (`float`, optional): 滤镜强度(0-100). 仅当所选滤镜能够调节强度时有效. 默认为100.
+            filter_meta (`Filter_type`): Filter type
+            t_range (`Timerange`): Time range of the filter segment
+            track_name (`str`, optional): Name of the target track. May be omitted when there is only one filter track.
+            intensity (`float`, optional): Filter intensity (0–100). Only effective when the chosen filter supports intensity adjustment. Defaults to 100.
 
         Raises:
-            `NameError`: 未找到指定名称的轨道, 或必须提供`track_name`参数时未提供
-            `TypeError`: 指定的轨道不是滤镜轨道
-            `ValueError`: 新片段与已有片段重叠
+            `NameError`: The specified track was not found, or `track_name` is required but was not provided
+            `TypeError`: The specified track is not a filter track
+            `ValueError`: The new segment overlaps an existing segment
         """
         target = self.get_track(Filter_segment, track_name)
 
-        # 加入轨道并更新时长
-        segment = Filter_segment(filter_meta, t_range, intensity / 100.0)  # 转换为0-1范围
+        # Add to track and update duration
+        segment = Filter_segment(filter_meta, t_range, intensity / 100.0)  # convert to 0–1 range
         target.add_segment(segment)
         self.duration = max(self.duration, t_range.end)
 
-        # 自动添加相关素材
+        # Automatically add related materials
         self.materials.filters.append(segment.material)
         return self
 
@@ -472,55 +475,57 @@ class Script_file:
                    background: Optional[Text_background] = None,
                    bubble: Optional[TextBubble] = None,
                    effect: Optional[TextEffect] = None) -> "Script_file":
-        """从SRT文件中导入字幕, 支持传入一个`Text_segment`作为样式参考
+        """Import subtitles from an SRT file, optionally using a `Text_segment` as a style reference
 
-        注意: 默认不会使用参考片段的`clip_settings`属性, 若需要请显式为此函数传入`clip_settings=None`
+        Note: by default the `clip_settings` attribute of the reference segment is NOT used;
+        pass `clip_settings=None` explicitly if you want to inherit it from the reference.
 
         Args:
-            srt_content (`str`): SRT字幕内容或本地文件路径
-            track_name (`str`): 导入到的文本轨道名称, 若不存在则自动创建
-            style_reference (`Text_segment`, optional): 作为样式参考的文本片段, 若提供则使用其样式.
-            time_offset (`Union[str, float]`, optional): 字幕整体时间偏移, 单位为微秒, 默认为0.
-            text_style (`Text_style`, optional): 字幕样式, 默认模仿剪映导入字幕时的样式, 会被`style_reference`覆盖.
-            clip_settings (`Clip_settings`, optional): 图像调节设置, 默认模仿剪映导入字幕时的设置, 会覆盖`style_reference`的设置除非指定为`None`.
-            border (`Text_border`, optional): 描边设置, 默认不修改样式参考中的描边设置
-            background (`Text_background`, optional): 背景设置, 默认不修改样式参考中的背景设置
-            bubble (`TextBubble`, optional): 气泡效果, 默认不添加气泡效果
-            effect (`TextEffect`, optional): 花字效果, 默认不添加花字效果
+            srt_content (`str`): SRT subtitle content or a local file path
+            track_name (`str`): Name of the text track to import into; created automatically if it does not exist
+            style_reference (`Text_segment`, optional): A text segment to use as a style reference; its style will be applied if provided.
+            time_offset (`Union[str, float]`, optional): Overall time offset for subtitles in microseconds. Defaults to 0.
+            text_style (`Text_style`, optional): Subtitle style; mimics the default CapCut/JianYing import style and is overridden by `style_reference`.
+            clip_settings (`Clip_settings`, optional): Image adjustment settings; mimics the default CapCut/JianYing import settings
+                and overrides the `style_reference` settings unless set to `None`.
+            border (`Text_border`, optional): Stroke settings; by default the stroke settings from the style reference are not modified.
+            background (`Text_background`, optional): Background settings; by default the background settings from the style reference are not modified.
+            bubble (`TextBubble`, optional): Bubble effect; no bubble effect is added by default.
+            effect (`TextEffect`, optional): Stylized-font text effect; no text effect is added by default.
 
         Raises:
-            `NameError`: 已存在同名轨道
-            `TypeError`: 轨道类型不匹配
+            `NameError`: A track with the same name already exists
+            `TypeError`: Track type mismatch
         """
         if style_reference is None and clip_settings is None:
-            raise ValueError("未提供样式参考时请提供`clip_settings`参数")
+            raise ValueError("When no style_reference is provided, clip_settings must be specified")
 
         time_offset = tim(time_offset)
-        # 检查 track_name 是否存在于 self.tracks 或 self.imported_tracks
+        # Check whether track_name exists in self.tracks or self.imported_tracks
         track_exists = (track_name in self.tracks) or any(track.name == track_name for track in self.imported_tracks)
         if not track_exists:
-            self.add_track(Track_type.text, track_name, relative_index=999)  # 在所有文本轨道的最上层
+            self.add_track(Track_type.text, track_name, relative_index=999)  # Place above all existing text tracks
 
-        # 检查是否为本地文件路径
+        # Check whether srt_content is a local file path
         if os.path.exists(srt_content):
             with open(srt_content, "r", encoding="utf-8-sig") as srt_file:
                 lines = srt_file.readlines()
         else:
-            # 直接将内容按行分割
+            # Split content into lines directly
             lines = srt_content.splitlines()
 
         def __add_text_segment(text: str, t_range: Timerange) -> None:
             fixed_width = -1
-            if self.width < self.height:  # 竖屏
+            if self.width < self.height:  # Portrait
                 fixed_width = int(1080 * 0.6)
-            else:  # 横屏
+            else:  # Landscape
                 fixed_width = int(1920 * 0.7)
-            
+
             if style_reference:
                 seg = Text_segment.create_from_template(text, t_range, style_reference)
                 if clip_settings is not None:
                     seg.clip_settings = deepcopy(clip_settings)
-                # 复制其他可选属性
+                # Copy other optional attributes
                 if border:
                     seg.border = deepcopy(border)
                 if background:
@@ -529,18 +534,18 @@ class Script_file:
                     seg.bubble = deepcopy(bubble)
                 if effect:
                     seg.effect = deepcopy(effect)
-                # 设置固定宽高
+                # Set fixed width
                 seg.fixed_width = fixed_width
             else:
                 seg = Text_segment(text, t_range, style=text_style, clip_settings=clip_settings,
                                   border=border, background=background,
                                   fixed_width=fixed_width)
-                # 添加气泡和花字效果
+                # Add bubble and text effects
                 if bubble:
                     seg.bubble = deepcopy(bubble)
                 if effect:
                     seg.effect = deepcopy(effect)
-            # 如果有气泡或花字效果，需要将它们添加到素材列表中
+            # If bubble or text effects are present, add them to the materials list
             if bubble:
                 self.materials.filters.append(bubble)
             if effect:
@@ -562,7 +567,7 @@ class Script_file:
                 index += 1
                 read_state = "timestamp"
             elif read_state == "timestamp":
-                # 读取时间戳
+                # Parse timestamp
                 start_str, end_str = line.split(" --> ")
                 start, end = srt_tstamp(start_str), srt_tstamp(end_str)
                 text_trange = Timerange(start + time_offset, end - start)
@@ -570,7 +575,7 @@ class Script_file:
                 index += 1
                 read_state = "content"
             elif read_state == "content":
-                # 内容结束, 生成片段
+                # End of content block — create segment
                 if len(line) == 0:
                     __add_text_segment(text.strip(), text_trange)
 
@@ -580,7 +585,7 @@ class Script_file:
                     text += line + "\n"
                 index += 1
 
-        # 添加最后一个片段
+        # Add the final segment
         if len(text) > 0:
             __add_text_segment(text.strip(), text_trange)
 
@@ -588,18 +593,20 @@ class Script_file:
 
     def get_imported_track(self, track_type: Literal[Track_type.video, Track_type.audio, Track_type.text],
                            name: Optional[str] = None, index: Optional[int] = None) -> Track:
-        """获取指定类型的导入轨道, 以便在其上进行替换
+        """Get an imported track of the specified type for performing replacements on it
 
-        推荐使用轨道名称进行筛选（若已知轨道名称）
+        Using the track name for filtering is recommended when the name is known.
 
         Args:
-            track_type (`Track_type.video`, `Track_type.audio` or `Track_type.text`): 轨道类型, 目前只支持音视频和文本轨道
-            name (`str`, optional): 轨道名称, 不指定则不根据名称筛选.
-            index (`int`, optional): 轨道在**同类型的导入轨道**中的下标, 以0为最下层轨道. 不指定则不根据下标筛选.
+            track_type (`Track_type.video`, `Track_type.audio` or `Track_type.text`): Track type;
+                currently only audio, video, and text tracks are supported.
+            name (`str`, optional): Track name; if not specified, filtering by name is skipped.
+            index (`int`, optional): Index of the track within **imported tracks of the same type**,
+                where 0 is the bottom-most track. If not specified, filtering by index is skipped.
 
         Raises:
-            `TrackNotFound`: 未找到满足条件的轨道
-            `AmbiguousTrack`: 找到多个满足条件的轨道
+            `TrackNotFound`: No track matching the criteria was found
+            `AmbiguousTrack`: Multiple tracks matching the criteria were found
         """
         tracks_of_same_type: List[Track] = []
         for track in self.imported_tracks:
@@ -615,85 +622,91 @@ class Script_file:
 
         if len(ret) == 0:
             raise exceptions.TrackNotFound(
-                "没有找到满足条件的轨道: track_type=%s, name=%s, index=%s" % (track_type, name, index))
+                "No track matching criteria: track_type=%s, name=%s, index=%s" % (track_type, name, index))
         if len(ret) > 1:
             raise exceptions.AmbiguousTrack(
-                "找到多个满足条件的轨道: track_type=%s, name=%s, index=%s" % (track_type, name, index))
+                "Multiple tracks matching criteria: track_type=%s, name=%s, index=%s" % (track_type, name, index))
 
         return ret[0]
 
     def import_track(self, source_file: "Script_file", track: EditableTrack, *,
                      offset: Union[str, int] = 0,
                      new_name: Optional[str] = None, relative_index: Optional[int] = None) -> "Script_file":
-        """将一个`Editable_track`导入到当前`Script_file`中, 如从模板草稿中导入特定的文本或视频轨道到当前正在编辑的草稿文件中
+        """Import an `EditableTrack` into the current `Script_file`, e.g. importing a specific text or
+        video track from a template draft into the draft currently being edited
 
-        注意: 本方法会保留各片段及其素材的id, 因而不支持向同一草稿多次导入同一轨道
+        Note: this method preserves the IDs of all segments and their materials, so importing the same
+        track into the same draft more than once is not supported.
 
         Args:
-            source_file (`Script_file`): 源文件，包含要导入的轨道
-            track (`EditableTrack`): 要导入的轨道, 可通过`get_imported_track`方法获取.
-            offset (`str | int`, optional): 轨道的时间偏移量(微秒), 可以是整数微秒值或时间字符串(如"1s"). 默认不添加偏移.
-            new_name (`str`, optional): 新轨道名称, 默认使用源轨道名称.
-            relative_index (`int`, optional): 相对索引，用于调整导入轨道的渲染层级. 默认保持原有层级.
+            source_file (`Script_file`): Source file containing the track to import
+            track (`EditableTrack`): The track to import; obtainable via `get_imported_track`.
+            offset (`str | int`, optional): Time offset for the track in microseconds; can be an integer
+                microsecond value or a time string (e.g. "1s"). Defaults to no offset.
+            new_name (`str`, optional): New track name; defaults to the source track name.
+            relative_index (`int`, optional): Relative index for adjusting the render layer of the imported track.
+                Defaults to preserving the original layer.
         """
-        # 直接拷贝原始轨道结构, 按需修改渲染层级
+        # Copy the original track structure directly, adjusting render layer as needed
         imported_track = deepcopy(track)
         if relative_index is not None:
             imported_track.render_index = track.track_type.value.render_index + relative_index
         if new_name is not None:
             imported_track.name = new_name
 
-        # 应用偏移量
+        # Apply offset
         offset_us = tim(offset)
         if offset_us != 0:
             for seg in imported_track.segments:
                 seg.target_timerange.start = max(0, seg.target_timerange.start + offset_us)
         self.imported_tracks.append(imported_track)
 
-        # 收集所有需要复制的素材ID
+        # Collect all material IDs that need to be copied
         material_ids = set()
         segments: List[Dict[str, Any]] = track.raw_data.get("segments", [])
         for segment in segments:
-            # 主素材ID
+            # Primary material ID
             material_id = segment.get("material_id")
             if material_id:
                 material_ids.add(material_id)
 
-            # extra_material_refs中的素材ID
+            # Material IDs in extra_material_refs
             extra_refs: List[str] = segment.get("extra_material_refs", [])
             material_ids.update(extra_refs)
 
-        # 复制素材
+        # Copy materials
         for material_type, material_list in source_file.imported_materials.items():
             for material in material_list:
                 if material.get("id") in material_ids:
                     self.imported_materials[material_type].append(deepcopy(material))
                     material_ids.remove(material.get("id"))
 
-        assert len(material_ids) == 0, "未找到以下素材: %s" % material_ids
+        assert len(material_ids) == 0, "The following materials were not found: %s" % material_ids
 
-        # 更新总时长
+        # Update total duration
         self.duration = max(self.duration, track.end_time)
 
         return self
 
     def replace_material_by_name(self, material_name: str, material: Union[Video_material, Audio_material],
                                  replace_crop: bool = False) -> "Script_file":
-        """替换指定名称的素材, 并影响所有引用它的片段
+        """Replace the material with the given name, affecting all segments that reference it
 
-        这种方法不会改变相应片段的时长和引用范围(`source_timerange`), 尤其适合于图片素材
+        This method does not change the duration or source range (`source_timerange`) of the
+        corresponding segments, making it especially suitable for image materials.
 
         Args:
-            material_name (`str`): 要替换的素材名称
-            material (`Video_material` or `Audio_material`): 新素材, 目前只支持视频和音频
-            replace_crop (`bool`, optional): 是否替换原素材的裁剪设置, 默认为否. 仅对视频素材有效.
+            material_name (`str`): Name of the material to replace
+            material (`Video_material` or `Audio_material`): New material; currently only video and audio are supported
+            replace_crop (`bool`, optional): Whether to replace the crop settings of the original material.
+                Defaults to False. Only applicable to video materials.
 
         Raises:
-            `MaterialNotFound`: 根据指定名称未找到与新素材同类的素材
-            `AmbiguousMaterial`: 根据指定名称找到多个与新素材同类的素材
+            `MaterialNotFound`: No material of the same type as the new material was found with the given name
+            `AmbiguousMaterial`: Multiple materials of the same type as the new material were found with the given name
         """
         video_mode = isinstance(material, Video_material)
-        # 查找素材
+        # Find the material
         target_json_obj: Optional[Dict[str, Any]] = None
         target_material_list = self.imported_materials["videos" if video_mode else "audios"]
         name_key = "material_name" if video_mode else "name"
@@ -701,12 +714,12 @@ class Script_file:
             if mat[name_key] == material_name:
                 if target_json_obj is not None:
                     raise exceptions.AmbiguousMaterial(
-                        "找到多个名为 '%s', 类型为 '%s' 的素材" % (material_name, type(material)))
+                        "Multiple materials named '%s' of type '%s' were found" % (material_name, type(material)))
                 target_json_obj = mat
         if target_json_obj is None:
-            raise exceptions.MaterialNotFound("没有找到名为 '%s', 类型为 '%s' 的素材" % (material_name, type(material)))
+            raise exceptions.MaterialNotFound("No material named '%s' of type '%s' was found" % (material_name, type(material)))
 
-        # 更新素材信息
+        # Update material information
         target_json_obj.update({name_key: material.material_name, "path": material.path, "duration": material.duration})
         if video_mode:
             target_json_obj.update({"width": material.width, "height": material.height, "material_type": material.material_type})
@@ -719,28 +732,32 @@ class Script_file:
                                 source_timerange: Optional[Timerange] = None, *,
                                 handle_shrink: Shrink_mode = Shrink_mode.cut_tail,
                                 handle_extend: Union[Extend_mode, List[Extend_mode]] = Extend_mode.cut_material_tail) -> "Script_file":
-        """替换指定音视频轨道上指定片段的素材, 暂不支持变速片段的素材替换
+        """Replace the material for the specified segment on the given audio/video track;
+        variable-speed segments are not currently supported
 
         Args:
-            track (`Editable_track`): 要替换素材的轨道, 由`get_imported_track`获取
-            segment_index (`int`): 要替换素材的片段下标, 从0开始
-            material (`Video_material` or `Audio_material`): 新素材, 必须与原素材类型一致
-            source_timerange (`Timerange`, optional): 从原素材中截取的时间范围, 默认为全时段, 若是图片素材则默认与原片段等长.
-            handle_shrink (`Shrink_mode`, optional): 新素材比原素材短时的处理方式, 默认为裁剪尾部, 使片段长度与素材一致.
-            handle_extend (`Extend_mode` or `List[Extend_mode]`, optional): 新素材比原素材长时的处理方式, 将按顺序逐个尝试直至成功或抛出异常.
-                默认为截断素材尾部, 使片段维持原长不变
+            track (`EditableTrack`): The track whose segment material should be replaced; obtained via `get_imported_track`
+            segment_index (`int`): Zero-based index of the segment to replace
+            material (`Video_material` or `Audio_material`): New material; must match the type of the original material
+            source_timerange (`Timerange`, optional): Time range to clip from the new material;
+                defaults to the full duration, or the original segment duration for image materials.
+            handle_shrink (`Shrink_mode`, optional): How to handle the case where the new material is shorter than the original;
+                defaults to trimming the tail so the segment length matches the material.
+            handle_extend (`Extend_mode` or `List[Extend_mode]`, optional): How to handle the case where the new material
+                is longer than the original; modes are tried in order until one succeeds or an exception is raised.
+                Defaults to trimming the material tail to keep the segment length unchanged.
 
         Raises:
-            `IndexError`: `segment_index`越界
-            `TypeError`: 轨道或素材类型不正确
-            `ExtensionFailed`: 新素材比原素材长时处理失败
+            `IndexError`: `segment_index` is out of range
+            `TypeError`: The track or material type is incorrect
+            `ExtensionFailed`: Handling of a longer new material failed
         """
         if not isinstance(track, ImportedMediaTrack):
-            raise TypeError("指定的轨道(类型为 %s)不支持素材替换" % track.track_type)
+            raise TypeError("The specified track (type %s) does not support material replacement" % track.track_type)
         if not 0 <= segment_index < len(track):
-            raise IndexError("片段下标 %d 超出 [0, %d) 的范围" % (segment_index, len(track)))
+            raise IndexError("Segment index %d is out of range [0, %d)" % (segment_index, len(track)))
         if not track.check_material_type(material):
-            raise TypeError("指定的素材类型 %s 不匹配轨道类型 %s", (type(material), track.track_type))
+            raise TypeError("Material type %s does not match track type %s", (type(material), track.track_type))
         seg = track.segments[segment_index]
 
         if isinstance(handle_extend, Extend_mode):
@@ -751,38 +768,40 @@ class Script_file:
             else:
                 source_timerange = Timerange(0, material.duration)
 
-        # 处理时间变化
+        # Handle time range changes
         track.process_timerange(segment_index, source_timerange, handle_shrink, handle_extend)
 
-        # 最后替换素材链接
+        # Finally, replace the material reference
         track.segments[segment_index].material_id = material.material_id
         self.add_material(material)
 
-        # TODO: 更新总长
+        # TODO: update total duration
         return self
 
     def replace_text(self, track: EditableTrack, segment_index: int, text: Union[str, List[str]],
                      recalc_style: bool = True) -> "Script_file":
-        """替换指定文本轨道上指定片段的文字内容, 支持普通文本片段或文本模板片段
+        """Replace the text content of the specified segment on the given text track;
+        supports both regular text segments and text template segments
 
         Args:
-            track (`Editable_track`): 要替换文字的文本轨道, 由`get_imported_track`获取
-            segment_index (`int`): 要替换文字的片段下标, 从0开始
-            text (`str` or `List[str]`): 新的文字内容, 对于文本模板而言应传入一个字符串列表.
-            recalc_style (`bool`): 是否重新计算字体样式分布, 即调整各字体样式应用范围以尽量维持原有占比不变, 默认开启.
+            track (`EditableTrack`): The text track whose segment text should be replaced; obtained via `get_imported_track`
+            segment_index (`int`): Zero-based index of the segment to replace
+            text (`str` or `List[str]`): New text content; for text templates a list of strings should be provided.
+            recalc_style (`bool`): Whether to recalculate font-style range distribution, i.e. adjust the ranges of
+                each font style to preserve the original proportions as closely as possible. Defaults to True.
 
         Raises:
-            `IndexError`: `segment_index`越界
-            `TypeError`: 轨道类型不正确
-            `ValueError`: 文本模板片段的文本数量不匹配
+            `IndexError`: `segment_index` is out of range
+            `TypeError`: The track type is incorrect
+            `ValueError`: The number of text strings does not match the text template
         """
         if not isinstance(track, ImportedTextTrack):
-            raise TypeError("指定的轨道(类型为 %s)不支持文本内容替换" % track.track_type)
+            raise TypeError("The specified track (type %s) does not support text content replacement" % track.track_type)
         if not 0 <= segment_index < len(track):
-            raise IndexError("片段下标 %d 超出 [0, %d) 的范围" % (segment_index, len(track)))
+            raise IndexError("Segment index %d is out of range [0, %d)" % (segment_index, len(track)))
 
         def __recalc_style_range(old_len: int, new_len: int, styles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-            """调整字体样式分布"""
+            """Adjust font-style range distribution"""
             new_styles: List[Dict[str, Any]] = []
             for style in styles:
                 start = math.ceil(style["range"][0] / old_len * new_len)
@@ -794,14 +813,14 @@ class Script_file:
 
         replaced: bool = False
         material_id: str = track.segments[segment_index].material_id
-        # 尝试在文本素材中替换
+        # Try replacing in text materials
         for mat in self.imported_materials["texts"]:
             if mat["id"] != material_id:
                 continue
 
             if isinstance(text, list):
                 if len(text) != 1:
-                    raise ValueError(f"正常文本片段只能有一个文字内容, 但替换内容是 {text}")
+                    raise ValueError(f"A regular text segment can only have one text content, but the replacement is {text}")
                 text = text[0]
 
             content = json.loads(mat["content"])
@@ -814,7 +833,7 @@ class Script_file:
         if replaced:
             return self
 
-        # 尝试在文本模板中替换
+        # Try replacing in text templates
         for template in self.imported_materials["text_templates"]:
             if template["id"] != material_id:
                 continue
@@ -823,7 +842,7 @@ class Script_file:
             if isinstance(text, str):
                 text = [text]
             if len(text) > len(resources):
-                raise ValueError(f"文字模板'{template['name']}'只有{len(resources)}段文本, 但提供了{len(text)}段替换内容")
+                raise ValueError(f"Text template '{template['name']}' has {len(resources)} text segments but {len(text)} replacement strings were provided")
 
             for sub_material_id, new_text in zip(map(lambda x: x["text_material_id"], resources), text):
                 for mat in self.imported_materials["texts"]:
@@ -842,29 +861,29 @@ class Script_file:
             replaced = True
             break
 
-        assert replaced, f"未找到指定片段的素材 {material_id}"
+        assert replaced, f"No material found for segment {material_id}"
 
         return self
 
     def inspect_material(self) -> None:
-        """输出草稿中导入的贴纸、文本气泡以及花字素材的元数据"""
-        print("贴纸素材:")
+        """Output metadata for stickers, text bubbles, and text effects imported into the draft"""
+        print("Sticker materials:")
         for sticker in self.imported_materials["stickers"]:
             print("\tResource id: %s '%s'" % (sticker["resource_id"], sticker.get("name", "")))
 
-        print("文字气泡效果:")
+        print("Text bubble effects:")
         for effect in self.imported_materials["effects"]:
             if effect["type"] == "text_shape":
                 print("\tEffect id: %s ,Resource id: %s '%s'" %
                       (effect["effect_id"], effect["resource_id"], effect.get("name", "")))
 
-        print("花字效果:")
+        print("Stylized-font text effects:")
         for effect in self.imported_materials["effects"]:
             if effect["type"] == "text_effect":
                 print("\tResource id: %s '%s'" % (effect["resource_id"], effect.get("name", "")))
 
     def dumps(self) -> str:
-        """将草稿文件内容导出为JSON字符串"""
+        """Export the draft file content as a JSON string"""
         self.content["fps"] = self.fps
         self.content["duration"] = self.duration
         self.content["canvas_config"] = {"width": self.width, "height": self.height, "ratio": "original"}
@@ -892,14 +911,14 @@ class Script_file:
             "os_version": "15.5"
         }
 
-        # 合并导入的素材
+        # Merge imported materials
         for material_type, material_list in self.imported_materials.items():
             if material_type not in self.content["materials"]:
                 self.content["materials"][material_type] = material_list
             else:
                 self.content["materials"][material_type].extend(material_list)
 
-        # 对轨道排序并导出
+        # Sort tracks and export
         track_list: List[Base_track] = list(self.tracks.values())
         track_list.extend(self.imported_tracks)
         track_list.sort(key=lambda track: track.render_index)
@@ -908,16 +927,16 @@ class Script_file:
         return json.dumps(self.content, ensure_ascii=False, indent=4)
 
     def dump(self, file_path: str) -> None:
-        """将草稿文件内容写入文件"""
+        """Write the draft file content to a file"""
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(self.dumps())
 
     def save(self) -> None:
-        """保存草稿文件至打开时的路径, 仅在模板模式下可用
+        """Save the draft file to the path it was opened from; only available in template mode
 
         Raises:
-            `ValueError`: 不在模板模式下
+            `ValueError`: Not in template mode
         """
         if self.save_path is None:
-            raise ValueError("没有设置保存路径, 可能不在模板模式下")
+            raise ValueError("No save path is set; possibly not in template mode")
         self.dump(self.save_path)

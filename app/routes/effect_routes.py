@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from app.schemas import AddEffectRequest, AddStickerRequest
 from app.controllers import add_effect, add_sticker
 
-router = APIRouter(tags=["特效"])
+router = APIRouter(tags=["Effects"])
 
 @router.post('/add_effect',operation_id='add_effect')
 async def add_effect_route(request: AddEffectRequest):

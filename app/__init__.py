@@ -19,16 +19,16 @@ def create_app() -> FastAPI:
         version="1.0.0"
     )
 
-    # 配置 CORS 中间件
+    # Configure CORS middleware
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],  # 允许所有来源
+        allow_origins=["*"],  # Allow all origins
         allow_credentials=True,
-        allow_methods=["*"],  # 允许所有方法
-        allow_headers=["*"],  # 允许所有头部
+        allow_methods=["*"],  # Allow all methods
+        allow_headers=["*"],  # Allow all headers
     )
-    
-    # 注册路由
+
+    # Register routers
     app.include_router(video_router)
     app.include_router(audio_router)
     app.include_router(text_router)
@@ -36,8 +36,8 @@ def create_app() -> FastAPI:
     app.include_router(effect_router)
     app.include_router(draft_router)
     app.include_router(meta_router)
-    
-    # 挂载 MCP
+
+    # Mount MCP
     mcp = FastApiMCP(app)
     mcp.mount()
     

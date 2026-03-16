@@ -14,7 +14,7 @@ from app.controllers import (
     query_script
 )
 
-router = APIRouter(tags=["草稿"])
+router = APIRouter(tags=["Draft"])
 
 @router.post('/create_draft',operation_id='create_draft')
 async def create_draft_route(request: CreateDraftRequest):

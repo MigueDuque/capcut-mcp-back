@@ -110,27 +110,27 @@ def download_audio(audio_url, draft_name, material_name):
         raise Exception(f"Failed to download audio:\n{e.stderr}")
 
 def download_file(url:str, local_filename, max_retries=3, timeout=180):
-    # 检查是否是本地文件路径
+    # Check if the URL is actually a local file path
     if os.path.exists(url) and os.path.isfile(url):
-        # 是本地文件，直接复制
+        # Local file — copy directly instead of downloading
         directory = os.path.dirname(local_filename)
-        
-        # 创建目标目录（如果不存在）
+
+        # Create destination directory if it doesn't exist
         if directory and not os.path.exists(directory):
             os.makedirs(directory, exist_ok=True)
             print(f"Created directory: {directory}")
-        
+
         print(f"Copying local file: {url} to {local_filename}")
         start_time = time.time()
-        
-        # 复制文件
+
+        # Copy file
         shutil.copy2(url, local_filename)
-        
+
         print(f"Copy completed in {time.time()-start_time:.2f} seconds")
         print(f"File saved as: {os.path.abspath(local_filename)}")
         return True
-    
-    # 原有的下载逻辑
+
+    # Standard HTTP download logic
     # Extract directory part
     directory = os.path.dirname(local_filename)
 

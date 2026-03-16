@@ -1608,7 +1608,7 @@ def test_video_02():
         relative_index=0
     )
     video_result = add_video_impl(
-        video_url="https://videos.pexels.com/video-files/3129769/3129769-uhd_3840_2160_30fps.mp4", # 替换为实际的视频URL
+        video_url="https://videos.pexels.com/video-files/3129769/3129769-uhd_3840_2160_30fps.mp4", # Replace with actual video URL
         draft_id=video_result['output']['draft_id'],
         start=0,
         end=5,
@@ -1624,7 +1624,7 @@ def test_video_02():
         relative_index=0
     )
     video_result = add_video_impl(
-        video_url="https://videos.pexels.com/video-files/3129769/3129769-sd_426_240_30fps.mp4", # 替换为实际的视频URL
+        video_url="https://videos.pexels.com/video-files/3129769/3129769-sd_426_240_30fps.mp4", # Replace with actual video URL
         draft_id=video_result['output']['draft_id'],
         start=0,
         end=5,
@@ -1640,7 +1640,7 @@ def test_video_02():
         relative_index=0
     )
     video_result = add_video_impl(
-        video_url="https://videos.pexels.com/video-files/3129769/3129769-sd_640_360_30fps.mp4", # 替换为实际的视频URL
+        video_url="https://videos.pexels.com/video-files/3129769/3129769-sd_640_360_30fps.mp4", # Replace with actual video URL
         draft_id=video_result['output']['draft_id'],
         start=0,
         end=5,
@@ -1656,7 +1656,7 @@ def test_video_02():
         relative_index=0
     )
     video_result = add_video_impl(
-        video_url="https://videos.pexels.com/video-files/3129769/3129769-uhd_2560_1440_30fps.mp4", # 替换为实际的视频URL
+        video_url="https://videos.pexels.com/video-files/3129769/3129769-uhd_2560_1440_30fps.mp4", # Replace with actual video URL
         draft_id=video_result['output']['draft_id'],
         start=0,
         end=5,

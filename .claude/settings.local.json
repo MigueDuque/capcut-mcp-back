@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(pip install:*)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }

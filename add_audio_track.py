@@ -1,4 +1,4 @@
-# 导入必要的模块
+# Import required modules
 import os
 import pyJianYingDraft as draft
 import time

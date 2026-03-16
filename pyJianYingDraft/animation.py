@@ -1,4 +1,4 @@
-"""定义视频/文本动画相关类"""
+"""Video and text animation classes"""
 
 import uuid
 
@@ -13,25 +13,26 @@ from .metadata import CapCut_Intro_type, CapCut_Outro_type, CapCut_Group_animati
 from .metadata import Text_intro, Text_outro, Text_loop_anim
 from .metadata import CapCut_Text_intro, CapCut_Text_loop_anim, CapCut_Text_outro
 
+
 class Animation:
-    """一个视频/文本动画效果"""
+    """A single video or text animation effect"""
 
     name: str
-    """动画名称, 默认取为动画效果的名称"""
+    """Animation name — defaults to the effect's own name"""
     effect_id: str
-    """另一种动画id, 由剪映本身提供"""
+    """Animation effect id provided by CapCut/JianYing"""
     animation_type: str
-    """动画类型, 在子类中定义"""
+    """Animation type string; defined in subclasses"""
     resource_id: str
-    """资源id, 由剪映本身提供"""
+    """Resource id provided by CapCut/JianYing"""
 
     start: int
-    """动画相对此片段开头的偏移, 单位为微秒"""
+    """Offset from the segment start, in microseconds"""
     duration: int
-    """动画持续时间, 单位为微秒"""
+    """Animation duration in microseconds"""
 
     is_video_animation: bool
-    """是否为视频动画, 在子类中定义"""
+    """True for video animations, False for text animations; defined in subclasses"""
 
     def __init__(self, animation_meta: Animation_meta, start: int, duration: int):
         self.name = animation_meta.title
@@ -55,11 +56,12 @@ class Animation:
 
             "start": self.start,
             "duration": self.duration,
-            # 不导出path和request_id
+            # path and request_id are intentionally omitted
         }
 
+
 class Video_animation(Animation):
-    """一个视频动画效果"""
+    """A video animation effect"""
 
     animation_type: Literal["in", "out", "group"]
 
@@ -76,8 +78,9 @@ class Video_animation(Animation):
 
         self.is_video_animation = True
 
+
 class Text_animation(Animation):
-    """一个文本动画效果"""
+    """A text animation effect"""
 
     animation_type: Literal["in", "out", "loop"]
 
@@ -94,42 +97,48 @@ class Text_animation(Animation):
 
         self.is_video_animation = False
 
-class Segment_animations:
-    """附加于某素材上的一系列动画
 
-    对视频片段：入场、出场或组合动画；对文本片段：入场、出场或循环动画"""
+class Segment_animations:
+    """A collection of animations attached to a segment.
+
+    For video segments: intro, outro, or group animations.
+    For text segments: intro, outro, or loop animations.
+    """
 
     animation_id: str
-    """系列动画的全局id, 自动生成"""
+    """Globally unique id for this animation collection, auto-generated"""
 
     animations: List[Animation]
-    """动画列表"""
+    """List of animations in this collection"""
 
     def __init__(self):
         self.animation_id = uuid.uuid4().hex
         self.animations = []
 
     def get_animation_trange(self, animation_type: Literal["in", "out", "group", "loop"]) -> Optional[Timerange]:
-        """获取指定类型的动画的时间范围"""
+        """Return the time range of the animation with the given type, or None if not found"""
         for animation in self.animations:
             if animation.animation_type == animation_type:
                 return Timerange(animation.start, animation.duration)
         return None
 
     def add_animation(self, animation: Union[Video_animation, Text_animation]) -> None:
-        # 不允许添加超过一个同类型的动画（如两个入场动画）
+        # Only one animation of each type is allowed (e.g. no two intro animations)
         if animation.animation_type in [ani.animation_type for ani in self.animations]:
-            raise ValueError(f"当前片段已存在类型为 '{animation.animation_type}' 的动画")
+            raise ValueError(f"An animation of type '{animation.animation_type}' already exists on this segment")
 
         if isinstance(animation, Video_animation):
-            # 不允许组合动画与出入场动画同时出现
+            # Group animations cannot coexist with intro/outro animations
             if any(ani.animation_type == "group" for ani in self.animations):
-                raise ValueError("当前片段已存在组合动画, 此时不能添加其它动画")
+                raise ValueError("A group animation already exists on this segment; no other animations can be added")
             if animation.animation_type == "group" and len(self.animations) > 0:
-                raise ValueError("当前片段已存在动画时, 不能添加组合动画")
+                raise ValueError("Cannot add a group animation when other animations already exist on this segment")
         elif isinstance(animation, Text_animation):
             if any(ani.animation_type == "loop" for ani in self.animations):
-                raise ValueError("当前片段已存在循环动画, 若希望同时使用循环动画和入出场动画, 请先添加出入场动画再添加循环动画")
+                raise ValueError(
+                    "A loop animation already exists on this segment. "
+                    "To combine loop and intro/outro animations, add intro/outro first."
+                )
 
         self.animations.append(animation)
 

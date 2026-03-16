@@ -5,7 +5,7 @@ from pyJianYingDraft import trange, Font_type
 from typing import Optional
 from pyJianYingDraft import exceptions
 from create_draft import get_or_create_draft
-from pyJianYingDraft.text_segment import TextBubble, TextEffect
+from pyJianYingDraft.text_segment import TextBubble, TextEffect, Text_shadow
 
 def add_text_impl(
     text: str,
@@ -23,7 +23,14 @@ def add_text_impl(
     # Border parameters
     border_alpha: float = 1.0,
     border_color: str = "#000000",
-    border_width: float = 0.0,  # Default no border display
+    border_width: float = 0.0,  # Default no border; pass a positive value (e.g. 40.0) to enable
+    # Shadow parameters
+    shadow_enabled: bool = False,
+    shadow_color: str = "#000000",
+    shadow_alpha: float = 0.25,
+    shadow_blur: float = 0.23,
+    shadow_distance: float = 10.0,
+    shadow_angle: float = -70.0,
     # Background parameters
     background_color: str = "#000000",
     background_style: int = 1,
@@ -58,7 +65,13 @@ def add_text_impl(
     :param font_alpha: Text transparency, range 0.0-1.0 (default 1.0, completely opaque)
     :param border_alpha: Border transparency, range 0.0-1.0 (default 1.0)
     :param border_color: Border color (default black)
-    :param border_width: Border width (default 0.0, no border display)
+    :param border_width: Border width (default 0.0, no border display; use 40.0 as a typical value)
+    :param shadow_enabled: Enable drop shadow (default False)
+    :param shadow_color: Shadow color (default black)
+    :param shadow_alpha: Shadow opacity 0.0-1.0 (default 0.25)
+    :param shadow_blur: Shadow blur/smoothing 0.0-1.0 (default 0.23)
+    :param shadow_distance: Shadow distance (default 10.0)
+    :param shadow_angle: Shadow angle in degrees (default -70.0)
     :param background_color: Background color (default black)
     :param background_style: Background style (default 1)
     :param background_alpha: Background transparency (default 0.0, no background display)
@@ -123,6 +136,17 @@ def add_text_impl(
             color=rgb_border_color,
             width=border_width
         )
+
+    # Create text_shadow
+    text_shadow = None
+    if shadow_enabled:
+        text_shadow = Text_shadow(
+            alpha=shadow_alpha,
+            color=shadow_color,
+            angle=shadow_angle,
+            distance=shadow_distance,
+            smoothing=shadow_blur
+        )
     
     # Create text_background
     text_background = None
@@ -171,6 +195,7 @@ def add_text_impl(
         clip_settings=draft.Clip_settings(transform_y=transform_y, transform_x=transform_x),
         border=text_border,
         background=text_background,
+        shadow=text_shadow,
         fixed_width=pixel_fixed_width,
         fixed_height=pixel_fixed_height
     )

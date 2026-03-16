@@ -20,6 +20,12 @@ class AddTextRequest(BaseModel):
     background_color: Optional[str] = "#000000"
     background_style: Optional[int] = 0
     background_alpha: Optional[float] = 0.0
+    shadow_enabled: Optional[bool] = False
+    shadow_color: Optional[str] = "#000000"
+    shadow_alpha: Optional[float] = 0.25
+    shadow_blur: Optional[float] = 0.23
+    shadow_distance: Optional[float] = 10.0
+    shadow_angle: Optional[float] = -70.0
     bubble_effect_id: Optional[str] = None
     bubble_resource_id: Optional[str] = None
     effect_effect_id: Optional[str] = None

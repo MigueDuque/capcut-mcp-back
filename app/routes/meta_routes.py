@@ -14,7 +14,7 @@ from app.controllers import (
     get_video_character_effect_types
 )
 
-router = APIRouter(tags=["元数据"])
+router = APIRouter(tags=["Metadata"])
 
 @router.get('/get_intro_animation_types',operation_id='get_intro_animation_types')
 async def get_intro_animation_types_route():
