@@ -5,7 +5,10 @@
       "Bash(wc:*)",
       "Bash(pip install:*)",
       "Bash(curl:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(python:*)",
+      "Bash(cp:*)",
+      "Bash(python3:*)"
     ]
   }
 }
